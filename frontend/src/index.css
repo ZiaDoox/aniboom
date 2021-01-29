@@ -1,14 +1,34 @@
 main {
   min-height: 80vh;
+  
+}
+html {
+  width: 100%;
 }
 
 h3 {
   padding: 1rem 0;
 }
+.b-nav {
+  justify-content: center;
+  background-color: #F5921F;
+}
+.b-nav a {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.b-nav a:hover {
+  background: #E0E12A;
+}
+.nav-link {
+  padding: 0.5rem 1.9rem !important;
+}
 
 h1 {
   font-size: 1.8rem;
-  padding: 1rem 0;
+  padding: 2.2rem 0 !important;
 }
 
 h2 {
@@ -18,6 +38,19 @@ h2 {
 
 .rating span {
   margin: 0.1rem;
+}
+
+.navbar a {
+  font-style: bold !important;
+  font-size: 15px !important;
+}
+
+
+
+/* Hero Carousel */
+
+.carouselP {
+  border: 0 !important;
 }
 
 /* carousel */
@@ -32,14 +65,34 @@ h2 {
 }
 
 .carousel img {
-  height: 100%;
+  height: 700px;
   width: 100%;
 }
 .carousel a {
   margin: 0 auto;
 }
 @media (max-width: 900px) {
+  h1 {
+    padding: 10px !important;
+  }
   .carousel-caption h2 {
     font-size: 2.5vw;
   }
+  .container {
+    padding: 0 !important;
+  }
+  .carousel img {
+    height: 100%;
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
 }

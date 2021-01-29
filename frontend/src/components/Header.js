@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
@@ -18,7 +18,8 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
+      <div className="headertop">
+        <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -31,26 +32,10 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="mr-auto">
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
-              <Nav.Link>
-                Category 2
-              </Nav.Link>
-              <Nav.Link>
-                Category 3
-              </Nav.Link>
-              <Nav.Link>
-                Category 4
-              </Nav.Link>
-            </Nav>
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i> Cart
+                  <i className='fas fa-shopping-cart'></i>
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
@@ -86,6 +71,41 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
+      <div className="headerbottom">
+      <Nav className="b-nav">
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Chiens">
+                <Nav.Link>
+                  Chiens
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Chats">
+                <Nav.Link>
+                  Chats
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Oiseaux">
+                <Nav.Link>
+                  Oiseaux
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+      </div>
     </header>
   )
 }
