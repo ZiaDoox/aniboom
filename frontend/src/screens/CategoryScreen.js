@@ -12,20 +12,12 @@ import { listProducts } from '../actions/productActions'
 import Slogan from '../components/Slogan'
 
 const CategoryScreen = ({ match }) => {
-  const keyword = match.params.keyword
-
-  const pageNumber = match.params.pageNumber || 1
-
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const { loading, error, products} = productList
 
   const category = match.params.category
-
-  useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
 
   return (
     <>
