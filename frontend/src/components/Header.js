@@ -32,9 +32,11 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className="mr-auto">
-              <Nav.Link>
-                Category 1
-              </Nav.Link>
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
               <Nav.Link>
                 Category 2
               </Nav.Link>
