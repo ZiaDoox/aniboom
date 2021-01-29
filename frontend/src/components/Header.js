@@ -18,14 +18,33 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>ProShop</Navbar.Brand>
+            <Navbar.Brand>
+              <img
+                src={process.env.PUBLIC_URL + '/images/logo.png'}
+                width="80"
+                height="100"
+                className="d-inline-block align-top"/>
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Route render={({ history }) => <SearchBox history={history} />} />
+            <Nav className="mr-auto">
+              <Nav.Link>
+                Category 1
+              </Nav.Link>
+              <Nav.Link>
+                Category 2
+              </Nav.Link>
+              <Nav.Link>
+                Category 3
+              </Nav.Link>
+              <Nav.Link>
+                Category 4
+              </Nav.Link>
+            </Nav>
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
