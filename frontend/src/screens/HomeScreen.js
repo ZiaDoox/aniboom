@@ -10,6 +10,7 @@ import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import HeroCarousel from '../components/HeroCarousel'
+import MapContainer from '../components/MapContainer'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -56,8 +57,17 @@ const HomeScreen = ({ match }) => {
           />
         </>
       )}
+      <h1>Our Place</h1>
+      <MapContainer 
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEdZQN87aJJFm9CHk1s9-2xPIdB2hEs7E"
+        loadingElement={<div style={{ height: '100%'}} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+        center={{ lat: -6.730707615438302 , lng: 33.9955009872961 }}
+        zoom={4}
+      />
     </>
-  )
+  ) 
 }
 
 export default HomeScreen
