@@ -9,7 +9,6 @@ import Paginate from '../components/Paginate'
 import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
-import Slogan from '../components/Slogan'
 import HeroCarousel from '../components/HeroCarousel'
 
 const HomeScreen = ({ match }) => {
@@ -36,7 +35,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <h1>Latest Products</h1>
+      <h1>Nouveautes</h1>
       {loading ? (
         <Loader />
       ) : error ? (

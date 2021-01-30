@@ -6,10 +6,8 @@ import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
-import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
-import Slogan from '../components/Slogan'
 
 const CategoryScreen = ({ match }) => {
   const dispatch = useDispatch()

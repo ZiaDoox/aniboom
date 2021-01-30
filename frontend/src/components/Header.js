@@ -74,34 +74,39 @@ const Header = () => {
       </div>
       <div className="headerbottom">
       <Nav className="b-nav">
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
               <LinkContainer to="/category/Chiens">
                 <Nav.Link>
-                  Chiens
+                Chiens
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/category/Chats">
                 <Nav.Link>
-                  Chats
+                Chats
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Aquariophilie">
+                <Nav.Link>
+                Aquariophilie
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Reptiles">
+                <Nav.Link>
+                Reptiles
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/category/Oiseaux">
                 <Nav.Link>
-                  Oiseaux
+                Oiseaux
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Rongeurs">
+                <Nav.Link>
+                Rongeurs
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/services">
+                <Nav.Link>
+                  Nos Services
                 </Nav.Link>
               </LinkContainer>
             </Nav>
