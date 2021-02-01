@@ -77,9 +77,6 @@ const Footer = () => {
                 <div class="footer-widget-heading">
                   <h3>Ou nous trouver?</h3>
                 </div>
-                <div className="footer-text mb-25">
-                  <MapContainer></MapContainer>
-                </div>
               </div>
             </Col>
           </Row>
