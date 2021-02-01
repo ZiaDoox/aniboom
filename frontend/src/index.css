@@ -9,26 +9,76 @@ html {
 h3 {
   padding: 1rem 0;
 }
-.b-nav {
-  justify-content: center;
-  background-color: #F5921F;
-}
+
 .b-nav a {
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 20px;
+  color: #F5921F !important;
+  font-weight: bold;
+  font-size: 15px !important;
+  padding-top: 1.5rem !important;
+  height: fit-content;
+}
+
+/* Category product cards */
+.ratings i {
+  font-size: 16px;
+  color: red
+}
+
+.strike-text {
+  color: red;
+  text-decoration: line-through
+}
+
+.product-image {
+  width: 100%
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 3px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block
+}
+
+.spec-1 {
+  color: #938787;
+  font-size: 15px
+}
+
+h5 {
+  font-weight: 400
+}
+
+.para {
+  font-size: 16px
 }
 
 .b-nav a:hover {
-  background: #E0E12A;
-}
-.nav-link {
-  padding: 0.5rem 1.9rem !important;
+  color: black !important;
 }
 
+.nav-link {
+  padding: 0rem 0.8rem;
+}
+
+.profile-nav {
+  padding: 0 5px;
+  margin: 0 !important;
+}
+
+.profile-nav a {
+  padding: 10px!important;
+}
+
+
+
 h1 {
-  font-size: 1.8rem;
-  padding: 2.2rem 0 !important;
+  font-size: 1.2rem;
+  padding: 2rem 0 !important;
 }
 
 h2 {
@@ -38,11 +88,6 @@ h2 {
 
 .rating span {
   margin: 0.1rem;
-}
-
-.navbar a {
-  font-style: bold !important;
-  font-size: 15px !important;
 }
 
 

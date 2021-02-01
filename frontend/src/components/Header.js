@@ -32,7 +32,44 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='ml-auto'>
+            <Nav className="mr-auto b-nav">
+            <LinkContainer to="/category/Chiens">
+                <Nav.Link>
+                Chiens
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Chats">
+                <Nav.Link>
+                Chats
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Aquariophilie">
+                <Nav.Link>
+                Aquariophilie
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Reptiles">
+                <Nav.Link>
+                Reptiles
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Oiseaux">
+                <Nav.Link>
+                Oiseaux
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Rongeurs">
+                <Nav.Link>
+                Rongeurs
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/services">
+                <Nav.Link>
+                  Services
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+            <Nav className='ml-auto profile-nav'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i>
@@ -72,45 +109,7 @@ const Header = () => {
         </Container>
       </Navbar>
       </div>
-      <div className="headerbottom">
-      <Nav className="b-nav">
-              <LinkContainer to="/category/Chiens">
-                <Nav.Link>
-                Chiens
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Chats">
-                <Nav.Link>
-                Chats
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Aquariophilie">
-                <Nav.Link>
-                Aquariophilie
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Reptiles">
-                <Nav.Link>
-                Reptiles
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Oiseaux">
-                <Nav.Link>
-                Oiseaux
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Rongeurs">
-                <Nav.Link>
-                Rongeurs
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/services">
-                <Nav.Link>
-                  Nos Services
-                </Nav.Link>
-              </LinkContainer>
-            </Nav>
-      </div>
+
     </header>
   )
 }
