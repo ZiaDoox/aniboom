@@ -40,7 +40,7 @@ const Header = () => {
               <LinkContainer to='/'>
                 <Nav.Link>Acceuil</Nav.Link>
               </LinkContainer>
-                <NavDropdown title="Nos Univers" id='nos-univers'>
+                <NavDropdown title="Categories" id='nos-univers'>
                   <LinkContainer to="/category/Chiens">
                     <NavDropdown.Item>
                       Chiens

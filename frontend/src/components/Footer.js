@@ -60,15 +60,13 @@ const Footer = () => {
             <Col xl={4} lg={4} md={6} className="mb-30">
               <div className="footer-widget">
                 <div className="footer-widget-heading">
-                  <h3>Nos univers</h3>
+                  <h3>Categories</h3>
                 </div>
                 <ul>
-                  <li><a href="/">Espaces Chiens</a></li>
-                  <li><a href="#">Espaces Chats</a></li>
-                  <li><a href="#">Espaces Oiseaux</a></li>
-                  <li><a href="#">Espaces Aquariophilie</a></li>
-                  <li><a href="#">Espaces Reptiles</a></li>
-                  <li><a href="#">Espaces Rongeurs </a></li>
+                  <li><a href="/category/Chiens">Espaces Chiens</a></li>
+                  <li><a href="/category/Chats">Espaces Chats</a></li>
+                  <li><a href="/category/Oiseaux">Espaces Oiseaux</a></li>
+                  <li><a href="/category/Aquariophilie">Espaces Aquariophilie</a></li>
                 </ul>
               </div>
             </Col>

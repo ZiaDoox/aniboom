@@ -24,7 +24,9 @@ const Product = ({ product }) => {
           />
         </Card.Text>
 
-        <Card.Text as='h3' className="product-price">{product.price}DH</Card.Text>
+        <Card.Text as='h3' className="product-price">
+          <span className="old-price mr-2">{product.price === 0 ? ' ' : product.price + (product.price * 0.25)}</span>
+          {product.price}DH</Card.Text>
       </Card.Body>
     </Card>
   )
