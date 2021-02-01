@@ -62,6 +62,38 @@ h3 {
   font-style: oblique;
 }
 
+/* end -- Message saying 'no reviews' styles ovveride */
+
+/* Showcase styling */
+
+.showcase .card {
+  border: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.showcase .card:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+.showcase img {
+  width: 15rem;
+  height: 20rem;
+  margin: auto;
+}
+.showcase .card-title {
+  font-size: 1rem;
+  justify-content: center;
+}
+.showcase .card-focus {
+  font-size: 1.3rem;
+  color: #F5921F;
+  font-weight: bold !important;
+}
+
+/* end-- Showcase styling */
+
+
 .dot {
   height: 7px;
   width: 7px;
