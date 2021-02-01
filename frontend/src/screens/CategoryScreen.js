@@ -1,21 +1,22 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Container } from 'react-bootstrap'
-import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
-import { listProducts } from '../actions/productActions'
 
-const CategoryScreen = ({ match }) => {
+
+const CategoryScreen = ({ history, match }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList)
   const { loading, error, products} = productList
 
   const category = match.params.category
+
+  const addToCartHandler = (id) => {
+    history.push(`/cart/${id}?qty=${1}`)
+  }
 
   return (
     <>
@@ -40,8 +41,8 @@ const CategoryScreen = ({ match }) => {
                   <Col className="mt-1" md={6}>
                     <h5>{product.name}</h5>
                     <div className="d-flex flex-row">
-                      <div class="ratings mr-2">
-                        <i class="fa fa-start"></i>
+                      <div className="ratings mr-2">
+                        <i className="fa fa-start"></i>
                       </div>
                       <p className="text-justify text-truncate para mb-0 mt-2">{product.description}</p>
                     </div>
@@ -52,9 +53,13 @@ const CategoryScreen = ({ match }) => {
                     </div>
                     <h6 className="text-success">Free Shipping</h6>
                     <div className="d-flex flex-column mt-4">
-                      <button className="btn btn-primary btn-sm" type="button">Details</button>
-                      <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to cart</button>
-                      <p className="m-2">Stock: {product.countInStock > 0 ? product.countInStock : 'Out Of Stock'}</p>
+                      <a className="btn btn-primary btn-sm btn-details" href={`/product/${product._id}`}>Details</a>
+                      <button 
+                        disabled={product.countInStock === 0} 
+                        className="btn btn-outline-primary btn-atc btn-sm mt-2" 
+                        type="button"
+                        >Add to cart</button>
+                      <p className="m-2">{product.countInStock > 0 ? 'Stock: ' + product.countInStock : 'Out Of Stock'}</p>
                     </div>
                   </Col>
                 </Row>

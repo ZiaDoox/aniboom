@@ -6,11 +6,15 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
 
+
 const Header = () => {
   const dispatch = useDispatch()
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
+
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
 
   const logoutHandler = () => {
     dispatch(logout())
@@ -72,7 +76,7 @@ const Header = () => {
             <Nav className='ml-auto profile-nav'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i>
+                {cartItems.length}<i className='fas fa-shopping-cart'></i>
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (

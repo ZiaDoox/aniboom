@@ -33,6 +33,35 @@ h3 {
   width: 100%
 }
 
+.btn-atc {
+  border-color: rgb(6,13,59);
+}
+.btn-details {
+  background-color: #F5921F;
+}
+.btn-details:hover {
+  background-color: #F5921F;
+}
+
+.btn-details a:hover {
+  text-decoration: none;
+}
+.btn-atc:hover {
+  background-color: rgb(6,13,59);
+  border-color: rgb(6,13,59);
+
+}
+
+
+/* Message saying 'no reviews' styles ovveride */
+
+.alert-info {
+  background-color:  #f1a650 !important;
+  color: #000;
+  border: 0;
+  font-style: oblique;
+}
+
 .dot {
   height: 7px;
   width: 7px;
