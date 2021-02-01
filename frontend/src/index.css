@@ -10,6 +10,28 @@ h3 {
   padding: 1rem 0;
 }
 
+/* Navigation Styles Custom */
+
+.navbar-nav.b-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #F5921F;
+  color: #000 !important;
+}
+
+.dropdown-item {
+  padding: 1.25rem 1.5rem !important;
+}
+.navbar-nav.profile-nav {
+  position: absolute;
+  right: 0;
+}
+
 .b-nav a {
   color: #F5921F !important;
   font-weight: bold;
@@ -125,6 +147,21 @@ h5 {
 .nav-link {
   padding: 0rem 0.8rem;
 }
+.dropdown {
+  padding: 0rem 0.8rem !important;
+
+}
+
+#adminmenu {
+  background: none;
+  color: #938787;
+  padding-top: 1.5rem !important;
+  display: block;
+}
+
+.nav-item {
+  margin-right: 0 !important;
+}
 
 .profile-nav {
   padding: 0 5px;
@@ -132,7 +169,7 @@ h5 {
 }
 
 .profile-nav a {
-  padding: 10px!important;
+  padding-top: 1.5rem !important;
 }
 
 
