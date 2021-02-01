@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -9,8 +9,9 @@ import Paginate from '../components/Paginate'
 import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
-import Slogan from '../components/Slogan'
 import HeroCarousel from '../components/HeroCarousel'
+import MapContainer from '../components/MapContainer'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -36,7 +37,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <h1>Latest Products</h1>
+      <h1>Nouvelles Arrivées</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -57,8 +58,63 @@ const HomeScreen = ({ match }) => {
           />
         </>
       )}
+      <Row className="showcase mt-5">
+        <Col md={3}>
+          <LinkContainer to='/category/Chiens'>
+          <Card className='my-3 p-3 rounded'>
+            <img src="https://www.transparentpng.com/thumb/dog/dog-amazing-image-download-31.png" alt="Dog Amazing Image Download 31 @transparentpng.com" />
+            <Card.Body>
+              <Card.Title as='div'>
+                <strong><span className="card-focus">Chiens</span><br></br>Offres et Promos</strong>
+              </Card.Title>
+
+            </Card.Body>
+          </Card>
+          </LinkContainer>
+        </Col>
+        <Col md={3}>
+          <LinkContainer to='/category/Chats'>
+            <Card className='my-3 p-3 rounded'>
+              <Card.Img src={process.env.PUBLIC_URL + '/images/cat.png'} variant='top' />
+
+              <Card.Body>
+                <Card.Title as='div'>
+                  <strong><span className="card-focus">Chats</span><br></br>Alimentation et Mode</strong>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+            </LinkContainer>
+        </Col>
+        <Col md={3}>
+          <LinkContainer to='/category/Oiseaux'>
+            <Card className='my-3 p-3 rounded'>
+              <Card.Img src={process.env.PUBLIC_URL + '/images/bird.png'} variant='top' />
+
+              <Card.Body>
+                <Card.Title as='div'>
+                  <strong><span className="card-focus">OISEAUX</span><br></br>Aliments Vitamines</strong>
+                </Card.Title>
+
+              </Card.Body>
+            </Card>
+          </LinkContainer>
+        </Col>
+        <Col md={3}>
+          <LinkContainer to="/category/Aquarium">
+            <Card className='my-3 p-3 rounded'>
+              <Card.Img src={process.env.PUBLIC_URL + '/images/fish.png'} variant='top' />
+
+              <Card.Body>
+                <Card.Title as='div'>
+                  <strong><span className="card-focus">Aquarium</span><br></br>Aliments et Accessoires</strong>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </LinkContainer>
+        </Col>
+      </Row>
     </>
-  )
+  ) 
 }
 
 export default HomeScreen

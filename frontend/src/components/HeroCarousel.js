@@ -7,15 +7,15 @@ import Message from './Message'
 
 const HeroCarousel = () => {
   return (
-    <Carousel fade="true"pause='hover' className='bg-light carouselP'>
+    <Carousel fade={true} pause='hover' className='bg-light carouselP'>
         <Carousel.Item >
             <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} className="heroImg" fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan2.png'} fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/sloganaqua.jpg'} className="heroImg"fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/slogan3.jpg'} className="heroImg"fluid />
         </Carousel.Item>
     </Carousel>
   )
