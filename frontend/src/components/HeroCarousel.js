@@ -12,10 +12,10 @@ const HeroCarousel = () => {
             <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} className="heroImg" fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan2.png'} className="heroImg"fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/sloganaqua.jpg'} className="heroImg"fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} className="heroImg"fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/slogan3.jpg'} className="heroImg"fluid />
         </Carousel.Item>
     </Carousel>
   )

@@ -2,36 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import { connect } from "react-redux";
 
-const MapContainer = withScriptjs(withGoogleMap((props) => {
-    return ( 
-        <GoogleMap
-            defaultZoom={11}
-            center={props.focusLocation}
-        >
-            <Marker
-                position={{
-                lat: 40.844,
-                lng: 40.844,
-                }}
-            >
-            </Marker>
-        </GoogleMap>
-    
-    ); 
-})
-);
+import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 
-const mapStateToProps = (state) => {
-    //default location
-    let focusLocation = {
-      lat: 40.844,
-      lng: -73.8648,
-    };
-    
-    return {
-        focusLocation
-  };
+
+export class MapContainer extends React.Component {
+    render() {
+        return (
+            <Map google={this.props.google} zoom={14}>
+ 
+            <Marker onClick={this.onMarkerClick}
+                    name={'Current location'} />
+
+          </Map>
+        )
+    }
 }
 
-
-export default connect(mapStateToProps)(MapContainer);
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyBEdZQN87aJJFm9CHk1s9-2xPIdB2hEs7E'
+})(MapContainer)
