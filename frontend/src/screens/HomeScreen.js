@@ -114,6 +114,10 @@ const HomeScreen = ({ match }) => {
         </>
       )}
       
+      <h1>Ou nous trouver?</h1>
+      <div className="map mb-5 mt-5">
+        <MapContainer></MapContainer>
+      </div>
     </>
   ) 
 }

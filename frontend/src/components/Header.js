@@ -66,11 +66,6 @@ const Header = () => {
                       Oiseaux
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/category/Rongeurs">
-                    <NavDropdown.Item>
-                      Rongeurs
-                    </NavDropdown.Item>
-                  </LinkContainer>
                 </NavDropdown>
                 <LinkContainer to="/services">
                     <Nav.Link>

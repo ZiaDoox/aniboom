@@ -10,10 +10,10 @@ export class MapContainer extends React.Component {
         return (
             <Map google={this.props.google} zoom={14}>
  
-            <Marker onClick={this.onMarkerClick}
+                <Marker onClick={this.onMarkerClick}
                     name={'Current location'} />
 
-          </Map>
+            </Map>
         )
     }
 }
