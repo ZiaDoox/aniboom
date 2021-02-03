@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar bg='light' variant='light' id="nav1" expand='lg' collapseOnSelect className="py-0 sticky-top">
+      <Navbar bg='light' variant='light' id="nav1" expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -111,22 +111,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Nav id="nav2" className="hidden">
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Electronics">
-                <Nav.Link>
-                  Electronics
-                </Nav.Link>
-              </LinkContainer>
+      <Nav bg="dark" variant="dark" id="nav2" className="py-0 hidden">
               <LinkContainer to="/category/Chiens">
                 <Nav.Link>
                   Chiens
@@ -137,9 +122,19 @@ const Header = () => {
                   Chats
                 </Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/category/Aquariophilie">
+                <Nav.Link>
+                Aquariophilie
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/category/Oiseaux">
                 <Nav.Link>
                   Oiseaux
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Services">
+                <Nav.Link>
+                  Services
                 </Nav.Link>
               </LinkContainer>
             </Nav>
