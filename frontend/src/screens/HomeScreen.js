@@ -37,7 +37,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <Row className="showcase mt-5">
+      <Row className=" mt-5" id="showcase">
         <Col md={3}>
           <LinkContainer to='/category/Chiens'>
           <Card className='my-3 p-3 rounded'>
@@ -92,7 +92,8 @@ const HomeScreen = ({ match }) => {
           </LinkContainer>
         </Col>
       </Row>
-      <h1>Nouvelles Arrivées</h1>
+      <div>
+      <h1 className="section_title">Nouvelles Arrivées</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -113,6 +114,7 @@ const HomeScreen = ({ match }) => {
           />
         </>
       )}
+      </div>
       
       <h1>Ou nous trouver?</h1>
       <div className="map mb-5 mt-5">

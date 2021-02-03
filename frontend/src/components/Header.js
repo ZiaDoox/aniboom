@@ -21,9 +21,8 @@ const Header = () => {
   }
 
   return (
-    <header>
-      <div className="headertop">
-        <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
+    <>
+      <Navbar bg='light' variant='light' id="nav1" expand='lg' collapseOnSelect className="py-0 sticky-top">
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -112,9 +111,39 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      </div>
-
-    </header>
+      <Nav id="nav2" className="hidden">
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Electronics">
+                <Nav.Link>
+                  Electronics
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Chiens">
+                <Nav.Link>
+                  Chiens
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Chats">
+                <Nav.Link>
+                  Chats
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category/Oiseaux">
+                <Nav.Link>
+                  Oiseaux
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+  </>
   )
 }
 
