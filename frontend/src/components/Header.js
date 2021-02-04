@@ -22,7 +22,6 @@ const Header = () => {
 
   return (
     <header>
-      <div className="headertop">
         <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>
@@ -112,7 +111,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      </div>
+      
 
     </header>
   )
