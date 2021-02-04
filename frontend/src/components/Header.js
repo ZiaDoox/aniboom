@@ -112,7 +112,20 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+<<<<<<< HEAD
       <Navbar bg="dark" variant="dark" id="nav2" className="py-0 hidden">
+=======
+      <Navbar bg="light" variant="light" id="nav2" className="py-0 hidden">
+              <LinkContainer to='/' className="brand-a">
+                <Navbar.Brand>
+                  <img
+                    src={process.env.PUBLIC_URL + '/images/logo.png'}
+                    width="40"
+                    height="50"
+                    className="d-inline-block align-top" />
+                </Navbar.Brand>
+              </LinkContainer>
+>>>>>>> cfc5f4e6eeb563898a061decdf412c58f0add755
               <LinkContainer to="/category/Chiens">
                 <Nav.Link>
                   Chiens
@@ -138,8 +151,48 @@ const Header = () => {
                   Services
                 </Nav.Link>
               </LinkContainer>
+<<<<<<< HEAD
       </Navbar>
     </header>
+=======
+              <Nav className='m-auto profile-nav2'>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                {cartItems.length}<i className='fas fa-shopping-cart'></i>
+                </Nav.Link>
+              </LinkContainer>
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id='username'>
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to='/login'>
+                  <Nav.Link>
+                    <i className='fas fa-user'></i> Sign In
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+              {userInfo && userInfo.isAdmin && (
+                <DropdownButton drop='left'title='Admin' id='adminmenu'>
+                  <LinkContainer to='/admin/userlist'>
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/productlist'>
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/orderlist'>
+                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
+                </DropdownButton>
+              )}
+            </Nav>
+      </Navbar>
+>>>>>>> cfc5f4e6eeb563898a061decdf412c58f0add755
   </>
   )
 }
