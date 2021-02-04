@@ -39,7 +39,7 @@ const CategoryScreen = ({ history, match }) => {
                     <img className="img-fluid ig-responsive rounded product-img" src={product.image}/>
                   </Col>
                   <Col className="mt-1" md={6}>
-                    <h5>{product.name}</h5>
+                    <h5 className="product-title">{product.name}</h5>
                     <div className="d-flex flex-row">
                       <div className="ratings mr-2">
                         <i className="fa fa-start"></i>
@@ -49,7 +49,7 @@ const CategoryScreen = ({ history, match }) => {
                   </Col>
                   <Col className="align-items-center align-content-center border-left mt-1" md={3}>
                     <div className="d-flex flex-row align-items-center">
-                      <h4 className="mr-1">MAD{product.price}</h4>
+                      <h4 className="mr-1 product-price">MAD{product.price}</h4>
                     </div>
                     <h6 className="text-success">Free Shipping</h6>
                     <div className="d-flex flex-column mt-4">
@@ -59,7 +59,7 @@ const CategoryScreen = ({ history, match }) => {
                         className="btn btn-outline-primary btn-atc btn-sm mt-2" 
                         type="button"
                         >Add to cart</button>
-                      <p className="m-2">{product.countInStock > 0 ? 'Stock: ' + product.countInStock : 'Out Of Stock'}</p>
+                      <p className="mt-4">{product.countInStock > 0 ? 'In Stock ' : 'Out Of Stock'}</p>
                     </div>
                   </Col>
                 </Row>

@@ -122,8 +122,16 @@ h3 {
 
 .btn-atc {
   border-color: rgb(6, 13, 59);
+  font-size: 1rem;
+}
+
+.product-title {
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  
 }
 .btn-details {
+  font-size: 1rem;
   background-color: #f5921f;
 }
 .btn-details:hover {
@@ -136,6 +144,15 @@ h3 {
 .btn-atc:hover {
   background-color: rgb(6, 13, 59);
   border-color: rgb(6, 13, 59);
+}
+
+@media (max-width: 850px) {
+  .product-title {
+    margin: 1rem 0;
+  }
+  .p-2 {
+    margin: 0.5rem !important;
+  }
 }
 
 /* Message saying 'no reviews' styles ovveride */
