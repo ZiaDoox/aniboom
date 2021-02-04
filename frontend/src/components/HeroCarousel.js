@@ -7,7 +7,7 @@ import Message from './Message'
 
 const HeroCarousel = () => {
   return (
-    <Carousel fade={true} pause='hover' className='bg-light carouselP'>
+    <Carousel fade={true} pause='hover'className='bg-light carouselP'>
         <Carousel.Item >
             <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} className="heroImg" fluid />
         </Carousel.Item>
