@@ -32,15 +32,17 @@ function renderStickyNavBar(navbar2, navbar1){
   if (window.pageYOffset >= navbars.offsetTop) {
         navbar2.classList.add("sticky-top");
         navbar1.classList.add("sticky-top");
+        console.log("added sticky top to both navs")
       } else {
         navbar2.classList.remove("sticky-top");
         navbar1.classList.remove("sticky-top");
+        console.log("removed sticky top to both navbars")
       }
 }
 function renderIndexHTMLNav() {
   renderStickyNavBar(navbar2, navbar1);
 // set mainbottom to determine coordinate of #about-page1 (grey div // after navbar) 
-var mainbottom = $("#showcase").offset().top;
+var mainbottom = $("#showcase").offset().top + $('#showcase').height();
   $(window).on('scroll', function () {
 
       // we round here to reduce a little workload
