@@ -27,9 +27,9 @@ const Header = () => {
           <LinkContainer to='/'>
             <Navbar.Brand>
               <img
-                src={process.env.PUBLIC_URL + '/images/logo.png'}
-                width="80"
-                height="100"
+                src={process.env.PUBLIC_URL + '/images/ani.png'}
+                width="200"
+                height="50"
                 className="d-inline-block align-top"/>
             </Navbar.Brand>
           </LinkContainer>
@@ -115,9 +115,9 @@ const Header = () => {
               <LinkContainer to='/' className="brand-a">
                 <Navbar.Brand>
                   <img
-                    src={process.env.PUBLIC_URL + '/images/logo.png'}
-                    width="40"
-                    height="50"
+                    src={process.env.PUBLIC_URL + '/images/ani.png'}
+                    width="140"
+                    height="40"
                     className="d-inline-block align-top" />
                 </Navbar.Brand>
               </LinkContainer>
