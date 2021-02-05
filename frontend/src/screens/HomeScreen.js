@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card, Container } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -37,7 +37,9 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <Row className=" mt-5" id="showcase">
+            <Container>  
+
+      <Row className="mt-5" id="showcase">
         <Col md={3}>
           <LinkContainer to='/category/Chiens'>
           <Card className='my-3 p-3 rounded'>
@@ -92,34 +94,33 @@ const HomeScreen = ({ match }) => {
           </LinkContainer>
         </Col>
       </Row>
-      <div>
-      <h1 className="section_title">Nouvelles Arrivées</h1>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
-        <>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ''}
-          />
-        </>
-      )}
-      </div>
-      
+        <h1 className="section_title">Nouvelles Arrivées</h1>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant='danger'>{error}</Message>
+        ) : (
+          <>
+            <Row>
+              {products.map((product) => (
+                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Product product={product} />
+                </Col>
+              ))}
+            </Row>
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ''}
+            />
+          </>
+        )}
       <h1>Ou nous trouver?</h1>
       <div className="map mb-5 mt-5">
         <MapContainer></MapContainer>
       </div>
+      </Container>
+
     </>
   ) 
 }
