@@ -37,7 +37,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-            <Container>  
+      <Container>  
 
       <Row className="mt-5" id="showcase">
         <Col md={3}>
@@ -120,7 +120,6 @@ const HomeScreen = ({ match }) => {
         <MapContainer></MapContainer>
       </div>
       </Container>
-
     </>
   ) 
 }
