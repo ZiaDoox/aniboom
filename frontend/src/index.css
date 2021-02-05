@@ -96,19 +96,32 @@ h3 {
 
 #nav2 {
   justify-content: center;
-  background-color: #F5921F;
+  background-color: #F5921F !important;
 }
+
+
+#nav2 .profile-nav {
+  font-size: 20px !important;
+}
+
 #nav2 a {
   color: #ffffff;
   font-weight: 800;
   font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 #nav2 a:hover {
-  background: #E0E12A;
+  background: #f8f8e7;
+  color: #000;
+  font-weight: bold;
 }
+
+#nav2 .brand-a:hover {
+  background: #F5921F;
+}
+
 
 .navbar-nav.b-nav {
   position: absolute;
@@ -127,6 +140,11 @@ h3 {
   padding: 1.25rem 1.5rem !important;
 }
 .navbar-nav.profile-nav {
+  position: absolute;
+  right: 0;
+}
+
+.profile-nav2 {
   position: absolute;
   right: 0;
 }
@@ -248,9 +266,7 @@ h5 {
 }
 
 #adminmenu {
-  background: none;
-  color: #938787;
-  padding-top: 1.5rem !important;
+  color: #fff;
   display: block;
 }
 
@@ -262,9 +278,21 @@ h5 {
   padding: 0 5px;
   margin: 0 !important;
 }
+.profile-nav2 {
+  padding: 0 5px;
+  margin: 0 !important;
+}
+
+a.dropdown-item {
+  color: black !important;
+}
 
 .profile-nav a {
   padding-top: 1.5rem !important;
+}
+.profile-nav2 a {
+  padding-top: 1.5rem !important;
+  font-size: 15px !important;
 }
 
 h1 {
