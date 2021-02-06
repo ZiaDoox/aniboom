@@ -20,6 +20,7 @@ const CategoryScreen = ({ history, match }) => {
 
   return (
     <>
+    <Container>
       <Meta />
       <h1>Espaces {category}</h1>
       {loading ? (
@@ -70,6 +71,7 @@ const CategoryScreen = ({ history, match }) => {
           </Container>
         </>
       )}
+      </Container>
     </>
   )
 }

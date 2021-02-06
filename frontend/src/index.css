@@ -153,6 +153,10 @@ h3 {
   width: 192px;
 }
 
+.btn-primary {
+  background-color: #f5921f !important;
+}
+
 .b-nav a {
   color: #f5921f !important;
   font-weight: bold;
