@@ -39,7 +39,7 @@ const HomeScreen = ({ match }) => {
       )}
       <Container>  
 
-      <Row className="mt-5" id="showcase">
+      <Row className="mt-5 showcase">
         <Col md={3}>
           <LinkContainer to='/category/Chiens'>
           <Card className='my-3 p-3 rounded'>

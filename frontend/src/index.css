@@ -329,13 +329,23 @@ h2 {
 }
 
 .carousel img {
-  height: 700px;
+  height: 800px;
   width: 100%;
 }
 .carousel a {
   margin: 0 auto;
 }
 @media (max-width: 900px) {
+  .footer-content {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .footer-content ul {
+    text-align: center;
+  }
+  #nav2 {
+    visibility: hidden;
+  }
   h1 {
     padding: 10px !important;
   }
