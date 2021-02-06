@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card, Container } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -38,6 +38,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
+      <Container>
       <Row className=" mt-5">
         <Col md={3} sm={12} lg={3}>
           <CategoryShowcase categoryTitle="Chiens" categoryDescription="Description" 
@@ -84,6 +85,7 @@ const HomeScreen = ({ match }) => {
       <div className="map mb-5 mt-5">
         <MapContainer></MapContainer>
       </div>
+      </Container>
     </>
   ) 
 }

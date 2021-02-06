@@ -148,6 +148,10 @@ h3 {
   position: absolute;
   right: 0;
 }
+.brand-logo {
+  height: 51px;
+  width: 192px;
+}
 
 .b-nav a {
   color: #f5921f !important;

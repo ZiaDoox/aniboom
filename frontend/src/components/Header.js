@@ -28,10 +28,10 @@ const Header = () => {
           <LinkContainer to='/'>
             <Navbar.Brand>
               <img
-                src={process.env.PUBLIC_URL + '/images/logo.png'}
+                src={process.env.PUBLIC_URL + '/images/ani.png'}
                 width="80"
                 height="100"
-                className="d-inline-block align-top"/>
+                className="d-inline-block align-top brand-logo"/>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
