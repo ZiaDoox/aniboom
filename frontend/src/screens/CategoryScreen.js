@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Button} from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
@@ -56,6 +56,9 @@ const CategoryScreen = ({ history, match }) => {
                     <div className="d-flex flex-column mt-4">
                       <a className="btn btn-primary btn-sm btn-details" href={`/product/${product._id}`}>Details</a>
                       <button 
+                        onClick={() => {
+                          history.push(`/cart/${product._id}?qty=${1}`)
+                        }}
                         disabled={product.countInStock === 0} 
                         className="btn btn-outline-primary btn-atc btn-sm mt-2" 
                         type="button"
