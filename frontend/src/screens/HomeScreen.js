@@ -42,19 +42,19 @@ const HomeScreen = ({ match }) => {
       <Row className=" mt-5">
         <Col md={3} sm={12} lg={3}>
           <CategoryShowcase categoryTitle="Chiens" categoryDescription="Description" 
-          imgURL="https://www.transparentpng.com/thumb/dog/dog-amazing-image-download-31.png"></CategoryShowcase>
+          imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
           <CategoryShowcase categoryTitle="Chats" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/cat.png'}></CategoryShowcase>
+          imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
           <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/bird.png'}></CategoryShowcase>
+          imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
           <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/fish.png'}></CategoryShowcase>
+          imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
         </Col>
       </Row>
       <div>
