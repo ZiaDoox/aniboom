@@ -42,11 +42,11 @@ const Footer = () => {
               <div className="footer-widget">
                 <div class="footer-widget-heading">
                   <h3>Contact</h3>
-                  <Row className="single-cta contact-m">
-                    <Col xl={1} md={2}>
+                  <Row className="single-cta">
+                    <Col sm={2}>
                       <i class="fas fa-map-marker-alt"></i>
                     </Col>
-                    <Col xl={11} md={10}>
+                    <Col sm={10}>
                       <div className="cta-text">
                         <h4>Trouvez-nous</h4>
                         <span>Avenue hialiej</span>
