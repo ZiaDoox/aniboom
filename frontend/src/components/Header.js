@@ -72,7 +72,7 @@ const Header = () => {
                     </Nav.Link>
                   </LinkContainer>
             </Nav>
-            <Nav className='m-auto profile-nav'>
+            <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                 {cartItems.length}<i className='fas fa-shopping-cart'></i>
