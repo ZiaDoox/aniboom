@@ -233,9 +233,12 @@ h3 {
   text-transform: uppercase;
   font-size: 1rem;
 }
+.category-showcase:hover {
+  cursor: pointer;
+}
 .showcase .card:hover {
   text-decoration: none;
-  cursor: pointer;
+  cursor:pointer !important;
 }
 .showcase img {
   width: 15rem;
