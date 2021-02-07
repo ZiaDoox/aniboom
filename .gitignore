@@ -5,15 +5,21 @@
 /backend/node_modules/
 /node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 /frontend/node_modules/
 /frontend/node_modules
 =======
+=======
+>>>>>>> dev
 /node_modules/
 /frontend/node_modules
 /frontend/node_modules/
 node_modules/
 frontend/node_modules
+<<<<<<< HEAD
 >>>>>>> 9b9ba95109a2726b704234b8bb3db8ab26621ca5
+=======
+>>>>>>> dev
 /.pnp
 .pnp.js
 

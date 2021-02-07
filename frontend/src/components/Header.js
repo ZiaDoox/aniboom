@@ -72,6 +72,8 @@ const Header = () => {
                     </Nav.Link>
                   </LinkContainer>
             </Nav>
+            <Route render={({ history }) => <SearchBox history={history} />} />
+
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
