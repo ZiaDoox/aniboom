@@ -22,8 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar bg='light' variant='light' id="nav1" expand='lg' collapseOnSelect className="py-0">
-
+      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -36,7 +35,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="mr-auto b-nav">
+            <Nav className="mr-auto">
               <LinkContainer to='/'>
                 <Nav.Link>Acceuil</Nav.Link>
               </LinkContainer>
