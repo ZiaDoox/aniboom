@@ -24,8 +24,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main id="showcase" >
-        <Container>
+      <main>
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -58,7 +57,6 @@ const App = () => {
             exact
           />
           <Route path='/' component={HomeScreen} exact />
-        </Container>
       </main>
       <Footer />
     </Router>

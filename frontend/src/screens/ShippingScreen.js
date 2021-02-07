@@ -23,7 +23,7 @@ const ShippingScreen = ({ history }) => {
   }
 
   return (
-    <FormContainer>
+    <FormContainer className="shipping-form">
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card, Container } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -12,6 +12,7 @@ import { listProducts } from '../actions/productActions'
 import HeroCarousel from '../components/HeroCarousel'
 import MapContainer from '../components/MapContainer'
 import { LinkContainer } from 'react-router-bootstrap'
+import CategoryShowcase from '../components/CategoryShowcase'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -37,59 +38,23 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <Row className=" mt-5" id="showcase">
-        <Col md={3}>
-          <LinkContainer to='/category/Chiens'>
-          <Card className='my-3 p-3 rounded'>
-            <img src="https://www.transparentpng.com/thumb/dog/dog-amazing-image-download-31.png" alt="Dog Amazing Image Download 31 @transparentpng.com" />
-            <Card.Body>
-              <Card.Title as='div'>
-                <strong><span className="card-focus">Chiens</span><br></br>Offres et Promos</strong>
-              </Card.Title>
-
-            </Card.Body>
-          </Card>
-          </LinkContainer>
+      <Container>
+      <Row className=" mt-5">
+        <Col md={3} sm={12} lg={3}>
+          <CategoryShowcase categoryTitle="Chiens" categoryDescription="Description" 
+          imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
-          <LinkContainer to='/category/Chats'>
-            <Card className='my-3 p-3 rounded'>
-              <Card.Img src={process.env.PUBLIC_URL + '/images/cat.png'} variant='top' />
-
-              <Card.Body>
-                <Card.Title as='div'>
-                  <strong><span className="card-focus">Chats</span><br></br>Alimentation et Mode</strong>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-            </LinkContainer>
+          <CategoryShowcase categoryTitle="Chats" categoryDescription="Description"
+          imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
-          <LinkContainer to='/category/Oiseaux'>
-            <Card className='my-3 p-3 rounded'>
-              <Card.Img src={process.env.PUBLIC_URL + '/images/bird.png'} variant='top' />
-
-              <Card.Body>
-                <Card.Title as='div'>
-                  <strong><span className="card-focus">OISEAUX</span><br></br>Aliments Vitamines</strong>
-                </Card.Title>
-
-              </Card.Body>
-            </Card>
-          </LinkContainer>
+          <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Description"
+          imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
         </Col>
         <Col md={3}>
-          <LinkContainer to="/category/Aquarium">
-            <Card className='my-3 p-3 rounded'>
-              <Card.Img src={process.env.PUBLIC_URL + '/images/fish.png'} variant='top' />
-
-              <Card.Body>
-                <Card.Title as='div'>
-                  <strong><span className="card-focus">Aquarium</span><br></br>Aliments et Accessoires</strong>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </LinkContainer>
+          <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Description"
+          imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
         </Col>
       </Row>
       <div>
@@ -120,6 +85,7 @@ const HomeScreen = ({ match }) => {
       <div className="map mb-5 mt-5">
         <MapContainer></MapContainer>
       </div>
+      </Container>
     </>
   ) 
 }

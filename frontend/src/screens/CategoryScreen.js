@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Button} from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
@@ -20,6 +20,7 @@ const CategoryScreen = ({ history, match }) => {
 
   return (
     <>
+    <Container>
       <Meta />
       <h1>Espaces {category}</h1>
       {loading ? (
@@ -39,7 +40,7 @@ const CategoryScreen = ({ history, match }) => {
                     <img className="img-fluid ig-responsive rounded product-img" src={product.image}/>
                   </Col>
                   <Col className="mt-1" md={6}>
-                    <h5>{product.name}</h5>
+                    <h5 className="product-title">{product.name}</h5>
                     <div className="d-flex flex-row">
                       <div className="ratings mr-2">
                         <i className="fa fa-start"></i>
@@ -49,17 +50,20 @@ const CategoryScreen = ({ history, match }) => {
                   </Col>
                   <Col className="align-items-center align-content-center border-left mt-1" md={3}>
                     <div className="d-flex flex-row align-items-center">
-                      <h4 className="mr-1">MAD{product.price}</h4>
+                      <h4 className="mr-1 product-price">MAD{product.price}</h4>
                     </div>
                     <h6 className="text-success">Free Shipping</h6>
                     <div className="d-flex flex-column mt-4">
                       <a className="btn btn-primary btn-sm btn-details" href={`/product/${product._id}`}>Details</a>
                       <button 
+                        onClick={() => {
+                          history.push(`/cart/${product._id}?qty=${1}`)
+                        }}
                         disabled={product.countInStock === 0} 
                         className="btn btn-outline-primary btn-atc btn-sm mt-2" 
                         type="button"
                         >Add to cart</button>
-                      <p className="m-2">{product.countInStock > 0 ? 'Stock: ' + product.countInStock : 'Out Of Stock'}</p>
+                      <p className="mt-4">{product.countInStock > 0 ? 'In Stock ' : 'Out Of Stock'}</p>
                     </div>
                   </Col>
                 </Row>
@@ -70,6 +74,7 @@ const CategoryScreen = ({ history, match }) => {
           </Container>
         </>
       )}
+      </Container>
     </>
   )
 }
