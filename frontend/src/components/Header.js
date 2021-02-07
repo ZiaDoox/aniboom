@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar bg='light' variant='light' id="nav1" expand='lg' collapseOnSelect className="py-0">
+      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -35,7 +35,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="mr-auto b-nav">
+            <Nav className="mr-auto">
               <LinkContainer to='/'>
                 <Nav.Link>Acceuil</Nav.Link>
               </LinkContainer>
@@ -72,7 +72,7 @@ const Header = () => {
                     </Nav.Link>
                   </LinkContainer>
             </Nav>
-            <Nav className='m-auto profile-nav'>
+            <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                 {cartItems.length}<i className='fas fa-shopping-cart'></i>
@@ -111,79 +111,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Navbar bg="light" variant="light" id="nav2" className="py-0 hidden">
-              <LinkContainer to='/' className="brand-a">
-                <Navbar.Brand>
-                  <img
-                    src={process.env.PUBLIC_URL + '/images/ani.png'}
-                    width="140"
-                    height="40"
-                    className="d-inline-block align-top" />
-                </Navbar.Brand>
-              </LinkContainer>
-              <LinkContainer to="/category/Chiens">
-                <Nav.Link>
-                  Chiens
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Chats">
-                <Nav.Link>
-                  Chats
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Aquariophilie">
-                <Nav.Link>
-                Aquariophilie
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Oiseaux">
-                <Nav.Link>
-                  Oiseaux
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/category/Services">
-                <Nav.Link>
-                  Services
-                </Nav.Link>
-              </LinkContainer>
-              <Nav className='m-auto profile-nav2'>
-              <LinkContainer to='/cart'>
-                <Nav.Link>
-                {cartItems.length}<i className='fas fa-shopping-cart'></i>
-                </Nav.Link>
-              </LinkContainer>
-              {userInfo ? (
-                <NavDropdown title={userInfo.name} id='username'>
-                  <LinkContainer to='/profile'>
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
-                  <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
-                  </NavDropdown.Item>
-                </NavDropdown>
-              ) : (
-                <LinkContainer to='/login'>
-                  <Nav.Link>
-                    <i className='fas fa-user'></i> Sign In
-                  </Nav.Link>
-                </LinkContainer>
-              )}
-              {userInfo && userInfo.isAdmin && (
-                <DropdownButton drop='left'title='Admin' id='adminmenu'>
-                  <LinkContainer to='/admin/userlist'>
-                    <NavDropdown.Item>Users</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/admin/productlist'>
-                    <NavDropdown.Item>Products</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
-                  </LinkContainer>
-                </DropdownButton>
-              )}
-            </Nav>
-      </Navbar>
-    </>
+  </>
   )
 }
 

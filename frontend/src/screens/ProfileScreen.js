@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Table, Form, Button, Row, Col } from 'react-bootstrap'
+import { Table, Form, Button, Row, Col, Container } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -54,6 +54,7 @@ const ProfileScreen = ({ location, history }) => {
   }
 
   return (
+    <Container>
     <Row>
       <Col md={3}>
         <h2>User Profile</h2>
@@ -164,6 +165,7 @@ const ProfileScreen = ({ location, history }) => {
         )}
       </Col>
     </Row>
+    </Container>
   )
 }
 

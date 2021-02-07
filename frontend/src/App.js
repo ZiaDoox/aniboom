@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main id="showcase" >
+      <main>
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
