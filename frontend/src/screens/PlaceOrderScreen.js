@@ -58,6 +58,9 @@ const PlaceOrderScreen = ({ history }) => {
         totalPrice: cart.totalPrice,
       })
     )
+    if(cart.paymentMethod === 'cod' && cart.length > 0){
+      history.push('./thankyou')
+    }
   }
 
   return (
@@ -124,25 +127,25 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>MAD{cart.itemsPrice}</Col>
+                  <Col>{cart.itemsPrice}DH</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>MAD{cart.shippingPrice}</Col>
+                  <Col>{cart.shippingPrice}DH</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>MAD{cart.taxPrice}</Col>
+                  <Col>{cart.taxPrice}DH</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>MAD{cart.totalPrice}</Col>
+                  <Col>{cart.totalPrice}DH</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
