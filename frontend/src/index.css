@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 main {
   min-height: 80vh;
 }
@@ -35,7 +36,9 @@ h3 {
   .footer-content {
     text-align: center;
   }
-  
+  .footer-widget ul{
+    text-align: center;
+  }
   h1 {
     text-align: center;
     padding: 1.5rem 0;
@@ -214,6 +217,8 @@ h3 {
   }
   .p-2 {
     margin: 0.5rem !important;
+  }
+  .category-list {
   }
 }
 
@@ -451,19 +456,23 @@ footer {
 
 .footer-logo {
   margin-bottom: 30px;
+  text-align: center;
 }
 .footer-logo img {
-  max-width: 200px;
+  max-width: 140px;
 }
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-  color: #7e7e7e;
+  text-align: center;
+  color: #e7e7e7;
   line-height: 28px;
+  font-family: 'Indie Flower', cursive;
 }
 .footer-social-icon span {
   color: #fff;
   display: block;
+  text-align: center;
   font-size: 20px;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
