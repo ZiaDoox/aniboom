@@ -55,8 +55,8 @@ const PlaceOrderScreen = ({ history }) => {
         totalPrice: cart .totalPrice,
       })
     )
-    if(cart.paymentMethod === 'cod' && cart.length > 0){
-      history.push('./thankyou')
+    if(cart.paymentMethod === 'cod'){
+      history.push('/thankyou')
     }
   }
 
