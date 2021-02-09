@@ -28,9 +28,9 @@ const Header = () => {
             <Navbar.Brand>
               <img
                 src={process.env.PUBLIC_URL + '/images/ani.png'}
-                width="80"
-                height="100"
-                className="d-inline-block align-top brand-logo"/>
+                width="200"
+                height="50"
+                className="d-inline-block align-top"/>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -72,6 +72,8 @@ const Header = () => {
                     </Nav.Link>
                   </LinkContainer>
             </Nav>
+            <Route render={({ history }) => <SearchBox history={history} />} />
+
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>

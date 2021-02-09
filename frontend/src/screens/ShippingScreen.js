@@ -12,13 +12,14 @@ const ShippingScreen = ({ history }) => {
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
-  const [country, setCountry] = useState(shippingAddress.country)
+  //const [country, setCountry] = useState(shippingAddress.country)
+  const [phone, setPhone] = useState(shippingAddress.phone)
 
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(saveShippingAddress({ address, city, postalCode, country }))
+    dispatch(saveShippingAddress({ address, city, postalCode, phone }))
     history.push('/payment')
   }
 
@@ -59,7 +60,17 @@ const ShippingScreen = ({ history }) => {
             onChange={(e) => setPostalCode(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
+        <Form.Group controlId="phone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control 
+            type='text'
+            placeholder='Enter your phone number'
+            value={phone}
+            required
+            onChange={(e) => setPhone(e.target.value)}>
+            </Form.Control>
+        </Form.Group>
+        {/* 
         <Form.Group controlId='country'>
           <Form.Label>Country</Form.Label>
           <Form.Control
@@ -70,7 +81,7 @@ const ShippingScreen = ({ history }) => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
+        */}
         <Button type='submit' variant='primary'>
           Continue
         </Button>

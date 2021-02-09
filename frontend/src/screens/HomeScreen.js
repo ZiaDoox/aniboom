@@ -57,30 +57,27 @@ const HomeScreen = ({ match }) => {
           imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
         </Col>
       </Row>
-      <div>
-      <h1 className="section_title">Nouvelles Arrivées</h1>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
-        <>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ''}
-          />
-        </>
-      )}
-      </div>
-      
+        <h1 className="section_title">Nouvelles Arrivées</h1>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant='danger'>{error}</Message>
+        ) : (
+          <>
+            <Row>
+              {products.map((product) => (
+                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Product product={product} />
+                </Col>
+              ))}
+            </Row>
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ''}
+            />
+          </>
+        )}
       <h1>Ou nous trouver?</h1>
       <div className="map mb-5 mt-5">
         <MapContainer></MapContainer>
