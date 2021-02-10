@@ -4,7 +4,7 @@ import { Row, Col, Container, Button} from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
-
+import Paginate from '../components/Paginate'
 
 const CategoryScreen = ({ history, match }) => {
   const dispatch = useDispatch()
@@ -14,9 +14,6 @@ const CategoryScreen = ({ history, match }) => {
 
   const category = match.params.category
 
-  const addToCartHandler = (id) => {
-    history.push(`/cart/${id}?qty=${1}`)
-  }
 
   return (
     <>
