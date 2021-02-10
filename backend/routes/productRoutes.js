@@ -4,6 +4,7 @@ import {
   getProducts,
   getProductById,
   deleteProduct,
+  getProductByCategory,
   createProduct,
   updateProduct,
   createProductReview,
@@ -14,6 +15,7 @@ import { protect, admin } from '../middleware/authMiddleware.js'
 router.route('/').get(getProducts).post(protect, admin, createProduct)
 router.route('/:id/reviews').post(protect, createProductReview)
 router.get('/top', getTopProducts)
+router.get('/:category', getProductByCategory)
 router
   .route('/:id')
   .get(getProductById)

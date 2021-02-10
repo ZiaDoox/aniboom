@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
 import {
   listProducts,
-  deleteProduct,
+  deleteProduct, 
   createProduct,
 } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'

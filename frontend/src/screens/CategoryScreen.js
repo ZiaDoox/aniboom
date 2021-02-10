@@ -5,15 +5,24 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import Paginate from '../components/Paginate'
+import {listProductsByCategory } from '../actions/productActions'
 
 const CategoryScreen = ({ history, match }) => {
   const dispatch = useDispatch()
+  const pageNumber = match.params.pageNumber || 1
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products} = productList
+  const { loading, error, products, cayeg} = productList
 
   const category = match.params.category
 
+  useEffect(() => {
+    dispatch(listProductsByCategory(category, 100))
+  }, [
+    dispatch,
+    history,
+    pageNumber
+  ])
 
   return (
     <>
