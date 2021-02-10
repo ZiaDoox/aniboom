@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
+import {LinkContainer } from 'react-router-bootstrap'
 import MapContainer from './MapContainer'
 
 const Footer = () => {
@@ -31,20 +33,31 @@ const Footer = () => {
                   <h3>Categories</h3>
                 </div>
                 <ul className="category-list">
-                  <li><a href="/category/Chiens">Espaces Chiens</a></li>
-                  <li><a href="/category/Chats">Espaces Chats</a></li>
-                  <li><a href="/category/Oiseaux">Espaces Oiseaux</a></li>
-                  <li><a href="/category/Aquariophilie">Espaces Aquariophilie</a></li>
+                  <Link to='/products/Chiens' style={{color: '#fff'}}>
+                    <li>Espace Chiens</li>
+                  </Link>
+                  <Link to='/products/Chats' style={{color: '#fff'}}>
+                    <li>Espace Chats</li>
+                  </Link>                  
+                  <Link to='/products/Aquariophilie' style={{color: '#fff'}}>
+                    <li>Espace Aqua</li>
+                  </Link>
+                  <Link to='/products/Oiseaux' style={{color: '#fff'}}>
+                    <li>Espace Oiseaux</li>
+                  </Link>                  
+                  <Link to='/products/Reptiles'style={{color: '#fff'}}>
+                    <li>Espace Reptiles</li>
+                  </Link>                
                 </ul>
-              </div>
+              </div> 
             </Col>
             <Col xl={4} lg={4} md={6} className="mb-5">
               <div className="footer-widget">
-                <div class="footer-widget-heading">
+                <div className="footer-widget-heading">
                   <h3>Contact</h3>
                   <Row className="single-cta">
                     <Col sm={2}>
-                      <i class="fas fa-map-marker-alt"></i>
+                      <i className="fas fa-map-marker-alt"></i>
                     </Col>
                     <Col sm={10}>
                       <div className="cta-text">
@@ -55,7 +68,7 @@ const Footer = () => {
                   </Row>
                   <Row className="single-cta contact-m">
                     <Col sm={2}>
-                      <i class="fas fa-phone"></i>
+                      <i className="fas fa-phone"></i>
                     </Col>
                     <Col sm={10}>
                       <div className="cta-text">
@@ -66,7 +79,7 @@ const Footer = () => {
                   </Row>
                   <Row className="single-cta contact-m">
                     <Col sm={2}>
-                      <i class="far fa-envelope-open"></i>
+                      <i className="far fa-envelope-open"></i>
                     </Col>
                     <Col sm={10}>
                       <div className="cta-text">
