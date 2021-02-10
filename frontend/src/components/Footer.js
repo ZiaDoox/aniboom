@@ -30,7 +30,7 @@ const Footer = () => {
                 <div className="footer-widget-heading">
                   <h3>Categories</h3>
                 </div>
-                <ul>
+                <ul className="category-list">
                   <li><a href="/category/Chiens">Espaces Chiens</a></li>
                   <li><a href="/category/Chats">Espaces Chats</a></li>
                   <li><a href="/category/Oiseaux">Espaces Oiseaux</a></li>
@@ -54,10 +54,10 @@ const Footer = () => {
                     </Col>
                   </Row>
                   <Row className="single-cta contact-m">
-                    <Col xl={1} md={2}>
+                    <Col sm={2}>
                       <i class="fas fa-phone"></i>
                     </Col>
-                    <Col xl={11} md={10}>
+                    <Col sm={10}>
                       <div className="cta-text">
                         <h4>Appelez-nous</h4>
                         <span>+212637780521</span>
@@ -65,10 +65,10 @@ const Footer = () => {
                     </Col>
                   </Row>
                   <Row className="single-cta contact-m">
-                    <Col xl={1} md={2}>
+                    <Col sm={2}>
                       <i class="far fa-envelope-open"></i>
                     </Col>
-                    <Col xl={11} md={10}>
+                    <Col sm={10}>
                       <div className="cta-text">
                         <h4>Email</h4>
                         <span>animalerie.aniboom@gmail.com</span>
