@@ -170,8 +170,10 @@ const ProductEditScreen = ({ match, history }) => {
                 type='text'
                 placeholder='Enter category'
                 value={category}
+                defaultValue='Chiens'
                 onChange={(e) => setCategory(e.target.value)}
               >
+                <option>TEST</option>
                 <option>Chiens</option>
                 <option>Chats</option>
                 <option>Aquariophile</option>
@@ -193,7 +195,7 @@ const ProductEditScreen = ({ match, history }) => {
               </Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
+            <Button className='mb-4'type='submit' variant='primary'>
               Update
             </Button>
           </Form>
