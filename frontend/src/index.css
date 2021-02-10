@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
 main {
   min-height: 80vh;
 }
@@ -8,6 +9,10 @@ html {
 
 h3 {
   padding: 1rem 0;
+}
+
+.title {
+  font-family: 'Lexend Giga', sans-serif;
 }
 
 /* New products section */
@@ -364,7 +369,7 @@ h2 {
 }
 
 .carousel img {
-  height: 800px;
+  max-height: 500px;
   width: 100%;
 }
 .carousel a {

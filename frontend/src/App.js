@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
+import ServiceScreen from './screens/ServiceScreen'
 import ThankYouPage from './components/ThankYouPage'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
+          <Route path='/services' component={ServiceScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/thankyou' component={ThankYouPage} />
           <Route path='/login' component={LoginScreen} />
