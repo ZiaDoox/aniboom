@@ -22,7 +22,7 @@ const CategoryScreen = ({ history, match }) => {
     <>
     <Container>
       <Meta />
-      <h1>Espaces {category}</h1>
+      <h1 className='title'>Espace {category}</h1>
       {loading ? (
         <Loader />
       ) : error ? (

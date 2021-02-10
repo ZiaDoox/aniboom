@@ -8,8 +8,8 @@ const CategoryShowcase = ({categoryTitle, categoryDescription, imgURL}) => {
             <MDBCard >
                 <MDBCardImage src={imgURL} className='img-fluid rounded' position="top" style={{width: '200px', height: '200px', margin: '15px auto 15px auto', padding:'10px'}}/>
                 <MDBCardBody style={{textAlign: 'center'}}>
-                    <MDBCardTitle style={{fontWeight: 'bold', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '22px'}}>{categoryTitle}</MDBCardTitle>
-                    <MDBCardText>{categoryDescription}</MDBCardText> 
+                    <MDBCardTitle className='category-title'style={{fontWeight: 'bold', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '22px'}}>{categoryTitle}</MDBCardTitle>
+                    <MDBCardText className='category-desc'>{categoryDescription}</MDBCardText> 
                 </MDBCardBody>                
             </MDBCard>
         </LinkContainer>

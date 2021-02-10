@@ -32,32 +32,37 @@ const HomeScreen = ({ match }) => {
     <>
       <Meta />
       {!keyword ? (
-        <HeroCarousel />
+        <>
+          <HeroCarousel />
+          <Container>
+            <Row className=" mt-5">
+              <Col sm={6} md={3}>
+                <CategoryShowcase categoryTitle="Chiens" categoryDescription="Aliments, Accessoires &amp; Jouets" 
+                imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
+              </Col>
+              <Col sm={6} md={3}>
+                <CategoryShowcase categoryTitle="Chats" categoryDescription="Promotions jusqu'a x% sur les Aliments"
+                imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
+              </Col>
+              <Col sm={6} md={3}>
+                <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Offres speciales sur Aliments &amp; Accesoires"
+                imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
+              </Col>
+              <Col sm={6} md={3}>
+                <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Offres &amp; Promos sur les produits Aqua"
+                imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
+              </Col>
+            </Row>
+          </Container>
+      </>
       ) : (
         <Link to='/' className='btn btn-light'>
           Go Back
         </Link>
       )}
       <Container>
-      <Row className=" mt-5">
-        <Col sm={6} md={3}>
-          <CategoryShowcase categoryTitle="Chiens" categoryDescription="Description" 
-          imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
-        </Col>
-        <Col sm={6} md={3}>
-          <CategoryShowcase categoryTitle="Chats" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
-        </Col>
-        <Col sm={6} md={3}>
-          <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
-        </Col>
-        <Col sm={6} md={3}>
-          <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Description"
-          imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
-        </Col>
-      </Row>
-        <h1 className="section_title">Nouvelles Arrivées</h1>
+      
+        <h1 className="section_title title mt-3">Nouvelles Arrivées</h1>
         {loading ? (
           <Loader />
         ) : error ? (
@@ -78,7 +83,7 @@ const HomeScreen = ({ match }) => {
             />
           </>
         )}
-      <h1>Ou nous trouver?</h1>
+      <h1 className='title'>Ou nous trouver?</h1>
       <div className="map mb-5 mt-5">
         <MapContainer></MapContainer>
       </div>
