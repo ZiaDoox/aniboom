@@ -9,13 +9,13 @@ const HeroCarousel = () => {
   return (
     <Carousel fade={true} pause='hover'className='bg-light carouselP'>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan.jpg'} className="heroImg" fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/sliderpets.jpg'} className="heroImg img-fluid" fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/sloganaqua.jpg'} className="heroImg"fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/sloganaqua.jpg'} className="heroImg img-fluid"fluid />
         </Carousel.Item>
         <Carousel.Item >
-            <Image src={process.env.PUBLIC_URL + '/images/slogan3.jpg'} className="heroImg"fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/slogan3.jpg'} className="heroImg img-fluid"fluid />
         </Carousel.Item>
     </Carousel>
   )

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=Montserrat:wght@100;900&family=Pangolin&family=Roboto:wght@100&display=swap');
+
 main {
   min-height: 80vh;
 }
@@ -6,8 +9,19 @@ html {
   width: 100%;
 }
 
+/* Default font */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 h3 {
   padding: 1rem 0;
+}
+.title {
+  font-family: 'Pangolin', cursive;
+  margin: 2rem 0;
+  font-weight: bold;
 }
 
 /* New products section */
@@ -35,6 +49,11 @@ h3 {
 @media (max-width: 850px) {
   .footer-content {
     text-align: center;
+  }
+
+  .navbar-brand img {
+    width: 200px !important;
+    height: 50px !important;
   }
   .footer-widget ul{
     text-align: center;
@@ -71,6 +90,14 @@ h3 {
 .product-price {
   color: #f5921f;
   font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.category-desc {
+  /*color: #f5921f;*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .product-price .old-price {
@@ -295,6 +322,8 @@ h5 {
 
 .nav-link {
   padding: 0rem 0.8rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #F5931F !important;
 }
 .dropdown {
   padding: 0rem 0.8rem !important;
@@ -364,7 +393,7 @@ h2 {
 }
 
 .carousel img {
-  height: 800px;
+  max-height: 500px;
   width: 100%;
 }
 .carousel a {

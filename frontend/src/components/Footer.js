@@ -20,7 +20,7 @@ const Footer = () => {
                 <div className="footer-social-icon">
                   <span>Suivez-nous</span>
                   <a href="https://www.facebook.com/Animalerie.Aniboom"><i className="fab fa-facebook-f"></i></a>
-                  <a href="https://www.instagram.com/ani_boom"><i className="fab fa-instagram"></i></a>
+                  <a href="https://www.instagram.com/anib-oom"><i className="fab fa-instagram"></i></a>
 
                 </div>
               </div>

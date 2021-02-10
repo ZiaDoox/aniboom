@@ -166,18 +166,11 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='category'>
               <Form.Label>Category</Form.Label>
               <Form.Control
-                as='select'
                 type='text'
                 placeholder='Enter category'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option>Chiens</option>
-                <option>Chats</option>
-                <option>Aquariophile</option>
-                <option>Reptiles</option>
-                <option>Oiseaux</option>
-                <option>Rongeurs</option>
               </Form.Control>
             </Form.Group>
 
@@ -193,7 +186,7 @@ const ProductEditScreen = ({ match, history }) => {
               </Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
+            <Button className='mb-4'type='submit' variant='primary'>
               Update
             </Button>
           </Form>

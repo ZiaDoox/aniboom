@@ -4,6 +4,7 @@ import {
   getProducts,
   getProductById,
   deleteProduct,
+  getProductByCategory,
   createProduct,
   updateProduct,
   createProductReview,

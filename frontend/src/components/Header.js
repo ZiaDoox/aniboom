@@ -28,8 +28,8 @@ const Header = () => {
             <Navbar.Brand>
               <img
                 src={process.env.PUBLIC_URL + '/images/ani.png'}
-                width="200"
-                height="50"
+                width="300"
+                height="75"
                 className="d-inline-block align-top"/>
             </Navbar.Brand>
           </LinkContainer>
@@ -40,27 +40,27 @@ const Header = () => {
                 <Nav.Link>Acceuil</Nav.Link>
               </LinkContainer>
                 <NavDropdown title="Categories" id='nos-univers'>
-                  <LinkContainer to="/category/Chiens">
+                  <LinkContainer to="/products/Chiens">
                     <NavDropdown.Item>
                       Chiens
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/category/Chats">
+                  <LinkContainer to="/products/Chats">
                     <NavDropdown.Item>
                       Chats
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/category/Aquariophilie">
+                  <LinkContainer to="/products/Aquariophilie">
                     <NavDropdown.Item>
                       Aquariophilie
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/category/Reptiles">
+                  <LinkContainer to="/products/Reptiles">
                     <NavDropdown.Item>
                       Reptiles
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/category/Oiseaux">
+                  <LinkContainer to="/products/Oiseaux">
                     <NavDropdown.Item>
                       Oiseaux
                     </NavDropdown.Item>

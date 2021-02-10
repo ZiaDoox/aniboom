@@ -4,25 +4,22 @@ import { Row, Col, Container, Button} from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
-
+import Paginate from '../components/Paginate'
 
 const CategoryScreen = ({ history, match }) => {
   const dispatch = useDispatch()
+  const pageNumber = match.params.pageNumber || 1
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products} = productList
+  const { loading, error, products, cayeg} = productList
 
   const category = match.params.category
-
-  const addToCartHandler = (id) => {
-    history.push(`/cart/${id}?qty=${1}`)
-  }
 
   return (
     <>
     <Container>
       <Meta />
-      <h1>Espaces {category}</h1>
+      <h1 className='title'>Espace {category}</h1>
       {loading ? (
         <Loader />
       ) : error ? (
