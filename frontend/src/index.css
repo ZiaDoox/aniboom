@@ -405,6 +405,11 @@ h2 {
   }
 }
 
+
+.dropdown {
+  padding: 0 !important;
+}
+
 /* Footer styles */
 ul {
   margin: 0px;
