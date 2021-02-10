@@ -1,3 +1,4 @@
+import { query } from 'express'
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
 
@@ -23,6 +24,23 @@ const getProducts = asyncHandler(async (req, res) => {
     .skip(pageSize * (page - 1))
 
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
+})
+
+// @desc Fetch single category
+// @route GET /api/products/:category
+// @access Public
+const getProductByCategory = asyncHandler(async (req, res) => {
+  const pageSize = 100
+  const page = Number(req.query.pageNumber) || 1
+
+  const category = req.query.category
+
+  const count = await Product.countDocuments({...category})
+  const products = await Product.find({ ...category})
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc    Fetch single product
