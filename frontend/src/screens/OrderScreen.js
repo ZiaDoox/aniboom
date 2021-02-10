@@ -195,7 +195,8 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item>
               {!order.isPaid && (
                 <ListGroup.Item>
-                  {loadingPay && <Loader />}
+                  
+                  {/*loadingPay && <Loader />}
                   {!sdkReady ? (
                     <Loader />
                   ) : (
@@ -203,10 +204,10 @@ const OrderScreen = ({ match, history }) => {
                       amount={order.totalPrice}
                       onSuccess={successPaymentHandler}
                     />
-                  )}
+                  )*/}
                 </ListGroup.Item>
               )}
-              {loadingDeliver && <Loader />}
+              {/*loadingDeliver && <Loader />*/}
               {userInfo &&
                 userInfo.isAdmin &&
                 !order.isDelivered && (
