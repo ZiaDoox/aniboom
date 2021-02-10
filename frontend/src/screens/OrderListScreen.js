@@ -53,9 +53,9 @@ const OrderListScreen = ({ history }) => {
             {sortedOrders.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
-                <td>{order.user && order.user.name}</td>
+                <td className='userName'>{order.user && order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
-                <td>{order.totalPrice}DH</td>
+                <td className='orderPrice'>{order.totalPrice}DH</td>
                 <td>
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
