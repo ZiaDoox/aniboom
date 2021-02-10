@@ -40,19 +40,19 @@ const HomeScreen = ({ match }) => {
       )}
       <Container>
       <Row className=" mt-5">
-        <Col md={3} sm={12} lg={3}>
+        <Col sm={6} md={3}>
           <CategoryShowcase categoryTitle="Chiens" categoryDescription="Description" 
           imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
         </Col>
-        <Col md={3}>
+        <Col sm={6} md={3}>
           <CategoryShowcase categoryTitle="Chats" categoryDescription="Description"
           imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
         </Col>
-        <Col md={3}>
+        <Col sm={6} md={3}>
           <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Description"
           imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
         </Col>
-        <Col md={3}>
+        <Col sm={6} md={3}>
           <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Description"
           imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
         </Col>
