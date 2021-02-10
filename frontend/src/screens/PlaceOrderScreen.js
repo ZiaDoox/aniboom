@@ -72,14 +72,13 @@ const PlaceOrderScreen = ({ history }) => {
               <p>
                 <strong>Address:</strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
-                {cart.shippingAddress.postalCode},{' '}
                 {cart.shippingAddress.phone}
               </p>
             </ListGroup.Item>
 
             <ListGroup.Item>
               <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <strong>Method: Cash On Delivery</strong>
               {/*{cart.paymentMethod}*/}
             </ListGroup.Item>
 

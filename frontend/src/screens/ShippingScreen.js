@@ -11,7 +11,7 @@ const ShippingScreen = ({ history }) => {
 
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+  //const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
   //const [country, setCountry] = useState(shippingAddress.country)
   const [phone, setPhone] = useState(shippingAddress.phone)
 
@@ -19,7 +19,7 @@ const ShippingScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(saveShippingAddress({ address, city, postalCode, phone }))
+    dispatch(saveShippingAddress({ address, city, phone }))
     history.push('/payment')
   }
 

@@ -85,6 +85,10 @@ const OrderScreen = ({ match, history }) => {
     dispatch(deliverOrder(order))
   }
 
+  const markAsPaid = () => {
+    dispatch(payOrder(order))
+  }
+
   return loading ? (
     <Loader />
   ) : error ? (
@@ -108,7 +112,6 @@ const OrderScreen = ({ match, history }) => {
               <p>
                 <strong>Address:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
-                {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.phone}
               </p>
               {order.isDelivered ? (
@@ -206,7 +209,6 @@ const OrderScreen = ({ match, history }) => {
               {loadingDeliver && <Loader />}
               {userInfo &&
                 userInfo.isAdmin &&
-                order.isPaid &&
                 !order.isDelivered && (
                   <ListGroup.Item>
                     <Button
@@ -215,6 +217,15 @@ const OrderScreen = ({ match, history }) => {
                       onClick={deliverHandler}
                     >
                       Mark As Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
+                {userInfo && userInfo.isAdmin && !order.isPaid && (
+                  <ListGroup.Item>
+                    <Button type='button'
+                    className='btn btn-block'
+                    onClick={markAsPaid}>
+                      Mark as Paid
                     </Button>
                   </ListGroup.Item>
                 )}
