@@ -50,6 +50,11 @@ h3 {
   .footer-content {
     text-align: center;
   }
+
+  .navbar-brand img {
+    width: 200px !important;
+    height: 50px !important;
+  }
   .footer-widget ul{
     text-align: center;
   }
