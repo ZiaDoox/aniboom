@@ -1,0 +1,6 @@
+---
+
+deployment: 
+  tasks:
+    - export DEPLOYPATH=/home/aniboomm/repositories/aniboom
+    - /bin/cp * $DEPLOYPATH
