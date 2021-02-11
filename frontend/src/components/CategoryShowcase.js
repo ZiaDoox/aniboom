@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const CategoryShowcase = ({categoryTitle, categoryDescription, imgURL}) => {
     return (
-        <LinkContainer className="category-showcase" style={{ maxWidth: '22rem', margin: 'auto', border: '1px solid #f5921f', boxShadow:'5px 5px 5px lightgrey'}} to={'category/'+categoryTitle}>
+        <LinkContainer className="category-showcase" style={{ maxWidth: '22rem', margin: 'auto', border: '1px solid #f5921f', boxShadow:'5px 5px 5px lightgrey'}} to={'/products/'+categoryTitle}>
             <MDBCard >
                 <MDBCardImage src={imgURL} className='img-fluid rounded' position="top" style={{width: '200px', height: '200px', margin: '15px auto 15px auto', padding:'10px'}}/>
                 <MDBCardBody style={{textAlign: 'center'}}>
