@@ -21,7 +21,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-social-icon">
                   <span>Suivez-nous</span>
-                  <div class='mx-auto social-i'>
+                  <div className='mx-auto social-i'>
                   <a href="https://www.facebook.com/Animalerie.Aniboom"><i className="fab fa-facebook-f"></i></a>
                   <a href="https://www.instagram.com/anib_oom"><i className="fab fa-instagram"></i></a>
                   </div>
