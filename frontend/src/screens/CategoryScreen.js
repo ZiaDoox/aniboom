@@ -59,7 +59,7 @@ const CategoryScreen = ({ history, match }) => {
                         disabled={product.countInStock === 0} 
                         className="btn btn-outline-primary btn-atc btn-sm mt-2" 
                         type="button"
-                        >Add to cart</button>
+                        >Ajouter au panier</button>
                       <p className="mt-4">{product.countInStock > 0 ? 'In Stock ' : 'Out Of Stock'}</p>
                     </div>
                   </Col>
