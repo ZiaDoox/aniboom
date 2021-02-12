@@ -76,6 +76,21 @@ h3 {
   }
 }
 
+.atcBtn {
+  border: 1px solid #f5921f !important;
+}
+
+.alert-info {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.atcBtn:hover {
+  color: #f5921f;
+  background-color: #fff !important;
+
+  border: 1px solid #f5921f !important;
+}
 
 .orderPrice {
   color: #f5921f !important;
