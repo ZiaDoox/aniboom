@@ -93,6 +93,12 @@ const Footer = () => {
               </div>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <p className='copyright'>Ⓒ Copyright Aniboom 2020</p>
+            </Col>
+            
+          </Row>
         </div>
       </Container>
     </footer>
