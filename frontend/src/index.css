@@ -265,6 +265,10 @@ h3 {
   border-color: rgb(6, 13, 59);
 }
 
+.social-i {
+  text-align: center !important;
+}
+
 @media (max-width: 850px) { 
   .footer-widget ul li {
     width: 100% !important;
