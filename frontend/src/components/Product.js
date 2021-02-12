@@ -1,9 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 import Rating from './Rating'
+import { useHistory } from 'react-router-dom'
 
-const Product = ({ product }) => {
+
+
+const Product = ({ product  }) => {
+const history = useHistory()
+const addToCartHandler = () => {
+  history.push(`/cart/${product._id}?qty=${1}`)
+}
   return (
     <Card className='my-3 p-3 rounded product-card'>
       <Link to={`/product/${product._id}`} className="product-img">
@@ -26,7 +33,10 @@ const Product = ({ product }) => {
 
         <Card.Text as='h3' className="product-price">
           <span className="old-price mr-2">{product.price === 0 ? ' ' : product.price + (product.price * 0.25)}</span>
-          {product.price}DH</Card.Text>
+          {product.price}DH
+          </Card.Text>
+          <Button onClick={addToCartHandler}variant='primary'>Add to cart</Button>
+
       </Card.Body>
     </Card>
   )

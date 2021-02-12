@@ -34,7 +34,7 @@ h3 {
 
 @media (min-width: 900px) {
   .product-card {
-    max-height: 400px;
+    max-height: 460px;
   }
   
   .product-card.product-img {
