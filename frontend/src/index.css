@@ -265,7 +265,10 @@ h3 {
   border-color: rgb(6, 13, 59);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 850px) { 
+  .footer-widget ul li {
+    width: 100% !important;
+  }
   .product-title {
     margin: 1rem 0;
   }
