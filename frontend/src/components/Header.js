@@ -22,6 +22,10 @@ const Header = () => {
 
   return (
     <>
+      <div className="alert alert-primary alert-dismissible fade show announcement-top-bar" role="alert">
+        <p className="d-md-block">Paiement à la livraison disponible
+</p>
+      </div>
       <Navbar bg='light' variant='light' expand='lg' collapseOnSelect className="py-0">
         <Container>
           <LinkContainer to='/'>

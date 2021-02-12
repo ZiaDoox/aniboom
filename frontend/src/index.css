@@ -323,6 +323,40 @@ h5 {
   font-weight: 400;
 }
 
+/* Annoucement Bar */
+section {
+  padding: 20px;
+}
+
+.announcement-top-bar {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  text-align: center;
+  background-color: #F5931F;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Montserrat', cursive;
+  font-size: .8rem;
+  z-index: 4;
+}
+
+
+
+.announcement-top-bar p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.announcement-top-bar.alert-dismissible .close {
+  top: 50%;
+  transform: translateY(-55%);
+}
+
 .para {
   font-size: 16px;
   color: #000;
@@ -412,6 +446,9 @@ h2 {
   margin: 0 auto;
 }
 @media (max-width: 900px) {
+  .announcement-top-bar p {
+    font-size: .5rem;
+  }
   .footer-content {
     text-align: center;
     padding: 1.5rem;
