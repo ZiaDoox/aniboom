@@ -269,9 +269,17 @@ h3 {
   text-align: center !important;
 }
 
+
+
+
+
 @media (max-width: 850px) { 
   .footer-widget ul li {
     width: 100% !important;
+  }
+
+  .alert-dismissible {
+    padding: .5rem 3.8rem !important;
   }
   .product-title {
     margin: 1rem 0;
