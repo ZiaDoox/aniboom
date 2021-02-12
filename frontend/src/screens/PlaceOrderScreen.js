@@ -78,15 +78,15 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
-              <strong>Method: Cash On Delivery</strong>
+              <h2>Méthode de paiement</h2>
+              <strong>Méthode: Paiement à la livraison</strong>
               {/*{cart.paymentMethod}*/}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Articles</h2>
               {cart.cartItems.length === 0 ? (
-                <Message>Your cart is empty</Message>
+                <Message>Votre panier est vide</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
@@ -106,7 +106,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x MAD{item.price} = MAD{item.qty * item.price}
+                          {item.qty} x {item.price}DH = {item.qty * item.price}DH
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -120,11 +120,11 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Sommaire</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Articles</Col>
                   <Col>{cart.itemsPrice}DH</Col>
                 </Row>
               </ListGroup.Item>
@@ -150,7 +150,7 @@ const PlaceOrderScreen = ({ history }) => {
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  Commander
                 </Button>
               </ListGroup.Item>
             </ListGroup>

@@ -61,7 +61,7 @@ const ProductScreen = ({ history, match }) => {
     <>
     <Container>
       <Link className='btn btn-light my-3' to='/'>
-        Go Back
+        Revenir
       </Link>
       {loading ? (
         <Loader />
@@ -85,7 +85,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: MAD{product.price}</ListGroup.Item>
+                <ListGroup.Item>Prix: {product.price}DH</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -96,7 +96,7 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>Prix:</Col>
                       <Col>
                         <strong>{product.price}DH</strong>
                       </Col>
@@ -138,11 +138,11 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block btn-details'
+                      className='btn-block btn-details atcBtn'
                       type='button'
                       disabled={product.countInStock === 0}
                     >
-                      Add To Cart
+                      Ajouter au panier
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -190,7 +190,7 @@ const ProductScreen = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group controlId='comment'>
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>Commentaire</Form.Label>
                         <Form.Control
                           as='textarea'
                           row='3'

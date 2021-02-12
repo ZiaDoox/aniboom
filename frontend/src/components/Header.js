@@ -88,13 +88,13 @@ const Header = () => {
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
+                    Se deconnecter
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <i className='fas fa-user'></i> Sign In
+                    <i className='fas fa-user'></i> Se connecter
                   </Nav.Link>
                 </LinkContainer>
               )}

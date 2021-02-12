@@ -96,14 +96,14 @@ const OrderScreen = ({ match, history }) => {
   ) : (
     <>
     <Container>
-      <h1>Order {order._id}</h1>
+      <h1>Achats {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>Nom: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
@@ -124,9 +124,9 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h2>Méthode de paiement</h2>
               <p>
-                <strong>Method: </strong>
+                <strong>Méthode: </strong>
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
@@ -137,9 +137,9 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Vos Articles</h2>
               {order.orderItems.length === 0 ? (
-                <Message>Order is empty</Message>
+                <Message>Vous n'avez aucun article sur votre panier</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
@@ -159,7 +159,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x MAD{item.price} = MAD{item.qty * item.price}
+                          {item.qty} x {item.price}DH = {item.qty * item.price}DH
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -173,11 +173,11 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Sommaires d'achats</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Articles</Col>
                   <Col>{order.itemsPrice}DH</Col>
                 </Row>
               </ListGroup.Item>

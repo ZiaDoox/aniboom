@@ -35,7 +35,7 @@ const addToCartHandler = () => {
           <span className="old-price mr-2">{product.price === 0 ? ' ' : product.price + (product.price * 0.25)}</span>
           {product.price}DH
           </Card.Text>
-          <Button className='rounded atcBtn' onClick={addToCartHandler}variant='primary'>Add to cart</Button>
+          <Button className='rounded atcBtn' onClick={addToCartHandler}variant='primary'>Ajouter au panier</Button>
 
       </Card.Body>
     </Card>
