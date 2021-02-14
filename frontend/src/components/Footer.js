@@ -16,7 +16,7 @@ const Footer = () => {
                   <img src={process.env.PUBLIC_URL + '/images/logo.png'}/>
                 </div>
                 <div className="footer-text">
-                  <p>A home without a pet is not home
+                  <p>A house without a pet is not a home
                   </p>
                 </div>
                 <div className="footer-social-icon">
