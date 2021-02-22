@@ -18,6 +18,12 @@ body {
   color: #000;
 }
 
+.product-description { 
+  line-height: 2rem;
+  word-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 h3 {
   padding: 1rem 0;
 }

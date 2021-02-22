@@ -86,9 +86,6 @@ const ProductScreen = ({ history, match }) => {
                   />
                 </ListGroup.Item>
                 <ListGroup.Item>Prix: {product.price}DH</ListGroup.Item>
-                <ListGroup.Item>
-                  Description: {product.description}
-                </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -148,6 +145,12 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup>
               </Card>
             </Col>
+          </Row>
+          <Row className='pt-3 product-description'>
+            <h2>Description:</h2>
+            <ListGroup.Item className='p-5'>
+                   {product.description}
+            </ListGroup.Item>
           </Row>
           <Row>
             <Col md={6}>
