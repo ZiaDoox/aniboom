@@ -53,6 +53,30 @@ const reducer = combineReducers({
   orderList: orderListReducer,
 })
 
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem('state');
+    if(serializedState === null){
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch(e) {
+    return undefined;
+  }
+};
+const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch(e) {
+    //ignore write errors
+  }
+};
+
+const persistedState = loadState();
+
+
+
 const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : []
@@ -75,10 +99,16 @@ const initialState = {
 
 const middleware = [thunk]
 
+// This persistedState is included at the time of store creation as initial value
 const store = createStore(
   reducer,
-  initialState,
+  persistedState,
   composeWithDevTools(applyMiddleware(...middleware))
 )
+
+// This is called every time when store is saved
+store.subscribe(() => {
+  saveState(store.getState());
+})
 
 export default store
