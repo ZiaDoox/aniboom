@@ -23,6 +23,9 @@ body {
   word-spacing: 2px;
   font-family: 'Montserrat', sans-serif;
 }
+.product-description .list-group-item {
+  width: 100%;
+}
 
 h3 {
   padding: 1rem 0;
