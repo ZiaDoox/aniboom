@@ -166,11 +166,19 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='category'>
               <Form.Label>Category</Form.Label>
               <Form.Control
+                as='select'
                 type='text'
-                placeholder='Enter category'
+                placeholder='Select Category'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
+                <option value='Oiseaux'>Oiseaux</option>
+                <option value='Chats'>Chats</option>
+                <option value='Chiens'>Chiens</option>
+                <option value='Reptiles'>Reptiles</option>
+                <option value='Aquariophilie'>Aquariophilie</option>
+
+
               </Form.Control>
             </Form.Group>
 
@@ -179,7 +187,8 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Control
                 as='textarea'
                 type='text'
-                placeholder='Enter description'
+                rows='8'
+                placeholder='Description'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               >
