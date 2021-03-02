@@ -36,19 +36,19 @@ const HomeScreen = ({ match }) => {
           <HeroCarousel />
           <Container>
             <Row className=" mt-5">
-              <Col sm={6} md={3}>
+              <Col sm={6} md={6} lg={3}>
                 <CategoryShowcase categoryTitle="Chiens" categoryDescription="Aliments, Accessoires &amp; Jouets" 
                 imgURL={process.env.PUBLIC_URL + '/images/dog2.png'}></CategoryShowcase>
               </Col>
-              <Col sm={6} md={3}>
+              <Col sm={6} md={6} lg={3}>
                 <CategoryShowcase categoryTitle="Chats" categoryDescription="Promotions jusqu'a x% sur les Aliments"
                 imgURL={process.env.PUBLIC_URL + '/images/cat2.png'}></CategoryShowcase>
               </Col>
-              <Col sm={6} md={3}>
+              <Col sm={6} md={6} lg={3}>
                 <CategoryShowcase categoryTitle="Oiseaux" categoryDescription="Offres speciales sur Aliments &amp; Accesoires"
                 imgURL={process.env.PUBLIC_URL + '/images/bird2.png'}></CategoryShowcase>
               </Col>
-              <Col sm={6} md={3}>
+              <Col sm={6} md={6} lg={3}>
                 <CategoryShowcase categoryTitle="Aquarium" categoryDescription="Offres &amp; Promos sur les produits Aqua"
                 imgURL={process.env.PUBLIC_URL + '/images/fish2.png'}></CategoryShowcase>
               </Col>

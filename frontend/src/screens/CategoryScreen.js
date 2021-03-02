@@ -32,7 +32,7 @@ const CategoryScreen = ({ history, match }) => {
                 return product.category === category;
               }).map((product) => (
                 <Col md={10} key={product._id}>
-                <Row className="p-2 border rounded">
+                <Row className="p-2 border rounded categorysc-card">
                   <Col className="mt-1" md={3}>
                     <img className="img-fluid ig-responsive rounded product-img" src={product.image}/>
                   </Col>

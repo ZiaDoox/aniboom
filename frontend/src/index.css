@@ -45,10 +45,12 @@ h3 {
 /* Product Card Styles */
 
 @media (min-width: 900px) {
-  .product-card {
-    max-height: 460px;
+  .card-body {
+    max-height: 800px !important;
   }
-  
+  .product-card {
+    height: fit-content !important;
+  }
   .product-card.product-img {
     height: 100%;
 }
@@ -313,8 +315,7 @@ h3 {
   .p-2 {
     margin: 0.5rem !important;
   }
-  .category-list {
-  }
+
 }
 
 /* Message saying 'no reviews' styles ovveride */
@@ -339,6 +340,10 @@ h3 {
 .category-showcase:hover {
   cursor: pointer;
   border-color: #f5921f; 
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.categorysc-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .showcase .card:hover {
@@ -406,6 +411,15 @@ section {
 
 .card-img-top {
   height: 250px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-img-top {
+    height: 300px;
+  }
+  .card-body {
+    max-height: 1000px !important;
+  }
 }
 
 .announcement-top-bar p {

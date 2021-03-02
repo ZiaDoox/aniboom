@@ -14,7 +14,7 @@ const addToCartHandler = () => {
   return (
     <Card className='my-3 p-3 rounded product-card'>
       <Link to={`/product/${product._id}`} className="product-img">
-        <Card.Img src={product.image} variant='top' />
+        <Card.Img className='img-fluid'src={product.image} fluid variant='top' />
       </Link>
 
       <Card.Body>
