@@ -145,10 +145,11 @@ h3 {
   font-size: 1.2rem; 
 }
 .product-title {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  font-size: 1.2rem;
-  max-height: 34px;
+  font-size: .8rem;
+  
+  max-block-size: 2rem;
 }
 
 
@@ -393,7 +394,9 @@ section {
   z-index: 4;
 }
 
-
+.card-img-top {
+  max-height: 250px;
+}
 
 .announcement-top-bar p {
   margin: 0;
@@ -408,8 +411,16 @@ section {
 .para {
   font-size: 16px;
   color: #000;
+  height: 125px;
+  overflow: hidden;
 }
 
+@media only screen and (max-width: 1000px) {
+  .para {
+    height: 100px;
+    margin-top: 2rem !important;
+  }
+}
 .b-nav a:hover {
   color: black !important;
 }

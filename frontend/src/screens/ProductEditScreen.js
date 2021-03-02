@@ -170,8 +170,10 @@ const ProductEditScreen = ({ match, history }) => {
                 type='text'
                 placeholder='Select Category'
                 value={category}
+                defaultValue='Oiseaux'
                 onChange={(e) => setCategory(e.target.value)}
               >
+                <option value=' '></option>
                 <option value='Oiseaux'>Oiseaux</option>
                 <option value='Chats'>Chats</option>
                 <option value='Chiens'>Chiens</option>
