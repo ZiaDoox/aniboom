@@ -14,6 +14,7 @@ const ShippingScreen = ({ history }) => {
   //const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
   //const [country, setCountry] = useState(shippingAddress.country)
   const [phone, setPhone] = useState(shippingAddress.phone)
+  
 
   const dispatch = useDispatch()
 
@@ -21,6 +22,13 @@ const ShippingScreen = ({ history }) => {
     e.preventDefault()
     dispatch(saveShippingAddress({ address, city, phone }))
     history.push('/payment')
+  }
+
+  const isNumberKey = (e) => {
+    let charCode = (e.which) ? e.which : e.keyCode
+    if(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+
+    return true;
   }
 
   return (
@@ -54,10 +62,12 @@ const ShippingScreen = ({ history }) => {
           <Form.Label>Phone</Form.Label>
           <Form.Control 
             type='text'
+            maxLength='13'
+            minLength='10'
             placeholder='Enter your phone number'
             value={phone}
             required
-            onChange={(e) => setPhone(e.target.value)}>
+            onChange={(e) => setPhone(e.target.value.replace(/\D/, ''))}>
             </Form.Control>
         </Form.Group>
         {/* 
