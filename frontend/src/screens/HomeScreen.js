@@ -35,7 +35,28 @@ const HomeScreen = ({ match }) => {
         <>
           <HeroCarousel />
           <Container>
-            <Row className=" mt-5">
+            <h1 className="section_title title mt-3">Nouvelles Arrivées</h1>
+            {loading ? (
+              <Loader />
+            ) : error ? (
+              <Message variant="danger">{error}</Message>
+            ) : (
+              <>
+                <Row>
+                  {products
+                    .slice(products.length - 4, products.length)
+                    .map((product) => (
+                      <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                        <Product product={product} />
+                      </Col>
+                    ))}
+                </Row>
+              </>
+            )}
+            
+              <h1 className='section_title title mt-3'>Decouvrez nos univers</h1>
+              <Container>
+            <Row className="mt-5">
               <Col sm={6} md={6} lg={3}>
                 <CategoryShowcase
                   categoryTitle="Chiens"
@@ -66,25 +87,6 @@ const HomeScreen = ({ match }) => {
               </Col>
             </Row>
           </Container>
-          <Container>
-            <h1 className="section_title title mt-3">Nouvelles Arrivées</h1>
-            {loading ? (
-              <Loader />
-            ) : error ? (
-              <Message variant="danger">{error}</Message>
-            ) : (
-              <>
-                <Row>
-                  {products
-                    .slice(products.length - 4, products.length)
-                    .map((product) => (
-                      <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                        <Product product={product} />
-                      </Col>
-                    ))}
-                </Row>
-              </>
-            )}
             <h1 className="title">Ou nous trouver?</h1>
             <div className="map mb-5 mt-5">
               <MapContainer></MapContainer>
