@@ -21,6 +21,10 @@ const CategoryScreen = ({ history, match }) => {
   const productList = useSelector((state) => state.productList)
   const { loading, error, products} = productList
   const category = match.params.category
+  const filteredProducts = products ? 
+    products.filter(function(product) {
+      return product.category === category;
+    }) : {}
 
   return (
     <>
@@ -31,13 +35,11 @@ const CategoryScreen = ({ history, match }) => {
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
-      ) : (
+      ) : filteredProducts.length ? (
         <>
           <Container className="mt-5 mb-5 p-0">
             <Row className="d-flex justify-content-center">
-              {products.filter(function(product) {
-                return product.category === category;
-              }).map((product) => (
+              {filteredProducts.map((product) => (
                 <Col md={10} key={product._id}>
                 <Row className="p-2 border rounded categorysc-card">
                   <Col className="mt-1" md={3}>
@@ -75,6 +77,12 @@ const CategoryScreen = ({ history, match }) => {
               ))}
               
             </Row>
+          </Container>
+        </>
+      ) : (
+        <>
+          <Container>
+            <h6>Coming Soon</h6>
           </Container>
         </>
       )}
