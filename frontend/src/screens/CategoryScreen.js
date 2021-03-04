@@ -6,13 +6,20 @@ import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import Paginate from '../components/Paginate'
 
+import { listProducts } from '../actions/productActions'
+
 const CategoryScreen = ({ history, match }) => {
-  const dispatch = useDispatch()
+
   const pageNumber = match.params.pageNumber || 1
+  const keyword = match.params.keyword
+
+  const dispatch = useDispatch()  
+  useEffect(() => {
+    dispatch(listProducts(keyword, pageNumber))
+}, [dispatch, keyword, pageNumber])
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products, cayeg} = productList
-
+  const { loading, error, products} = productList
   const category = match.params.category
 
   return (
