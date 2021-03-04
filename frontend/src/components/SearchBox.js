@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 
 const SearchBox = ({ history }) => {
   const [keyword, setKeyword] = useState('')
-
+  console.log(history);
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
@@ -19,10 +19,10 @@ const SearchBox = ({ history }) => {
         type='text'
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder='Search Nouveaute...'
+        placeholder='Recherche...'
         className='mr-sm-2 ml-sm-5'
       ></Form.Control>
-
+      <button type='submit' variant='outline-success' >Rechercher</button>
     </Form>
   )
 }

@@ -54,14 +54,7 @@ const HomeScreen = ({ match }) => {
               </Col>
             </Row>
           </Container>
-      </>
-      ) : (
-        <Link to='/' className='btn btn-light'>
-          Go Back
-        </Link>
-      )}
-      <Container>
-      
+          <Container>
         <h1 className="section_title title mt-3">Nouvelles Arrivées</h1>
         {loading ? (
           <Loader />
@@ -76,11 +69,7 @@ const HomeScreen = ({ match }) => {
                 </Col>
               ))}
             </Row>
-            <Paginate
-              pages={pages}
-              page={page}
-              keyword={keyword ? keyword : ''}
-            />
+            
           </>
         )}
       <h1 className='title'>Ou nous trouver?</h1>
@@ -88,6 +77,19 @@ const HomeScreen = ({ match }) => {
         <MapContainer></MapContainer>
       </div>
       </Container>
+      </>
+      ) : (
+        <>
+          <Link to='/' className='btn btn-light'>
+            Go Back
+          </Link>
+          <Paginate
+          pages={pages}
+          page={page}
+          keyword={keyword ? keyword : ''}
+        />
+      </>
+      )}
     </>
   ) 
 }
