@@ -58,7 +58,7 @@ const CategoryScreen = ({ history, match }) => {
                     <div className="d-flex flex-row align-items-center">
                       <h4 className="mr-1 product-price">MAD{product.price}</h4>
                     </div>
-                    <h6 className="text-success">Free Shipping</h6>
+                    <h6 className="text-success"><small>livraison gratuite à partir de</small> 120DH</h6>
                     <div className="d-flex flex-column mt-4">
                       <a className="btn btn-primary btn-sm btn-details" href={`/product/${product._id}`}>Details</a>
                       <button 
