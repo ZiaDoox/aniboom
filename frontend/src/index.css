@@ -11,6 +11,12 @@ html {
   width: 100%;
 }
 
+@media only screen and (max-width: 600px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
 /* Default font */
 
 body {

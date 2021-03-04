@@ -15,7 +15,7 @@ const SearchBox = ({ history }) => {
 
   return (
     <Form onSubmit={submitHandler} inline>
-      <i className='fas fa-search' aria-hidden='true'></i>
+      <i className='fas fa-search hide-sm' aria-hidden='true'></i>
       <Form.Control
         type='text'
         name='q'
