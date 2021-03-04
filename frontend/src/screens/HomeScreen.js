@@ -63,7 +63,7 @@ const HomeScreen = ({ match }) => {
         ) : (
           <>
             <Row>
-              {products.slice(0, 4).map((product) => (
+              {products.slice(products.length-4, products.length).map((product) => (
                 <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                   <Product product={product} />
                 </Col>

@@ -51,7 +51,7 @@ const CategoryScreen = ({ history, match }) => {
                       <div className="ratings mr-2">
                         <i className="fa fa-start"></i>
                       </div>
-                      <p className="text-justify para mb-0 mt-2">{product.description}</p>
+                      <p className="text-justify para mb-0 mt-2">{product.description+'...'}</p>
                     </div>
                   </Col>
                   <Col className="align-items-center align-content-center border-left mt-1" md={3}>
