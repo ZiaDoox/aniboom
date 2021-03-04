@@ -32,7 +32,7 @@ const addToCartHandler = () => {
         </Card.Text>
 
         <Card.Text as='h3' className="product-price">
-          <span className="old-price mr-2">{product.price === 0 ? ' ' : product.price + (product.price * 0.25)}</span>
+          <span className="old-price mr-2">{product.price === 0 ? ' ' : product.price + (product.price * 0.25)}DH</span>
           {product.price}DH
           </Card.Text>
           <Button className='rounded atcBtn' onClick={addToCartHandler}variant='primary'>Ajouter au panier</Button>
