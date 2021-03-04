@@ -29,7 +29,7 @@ const Search = ({ history, match }) => {
             <Loader />
         ) : error ? (
             <Message variant='danger'>{error}</Message>
-        ) : (
+        ) : products.length ? (
             <Container className="mt-5 mb-5 p-0">
             <Row className="d-flex justify-content-center">
               {products.map((product) => (
@@ -72,6 +72,12 @@ const Search = ({ history, match }) => {
             </Row>
           </Container>
         
+        ) : (
+          <>
+            <Container className='mt-5'>
+              <h3 className='text-center'>Aucun résultat pour '{keyword}'</h3>
+            </Container>
+          </>
         )}
           </>
     )

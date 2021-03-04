@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className="footer-content pt-5 pb-5">
+        <div className="footer-content pt-5">
           <Row>
             <Col xl={4} lg={4} className="mb-50">
               <div className="footer-widget">
@@ -63,7 +63,7 @@ const Footer = () => {
                     <Col sm={10}>
                       <div className="cta-text">
                         <h4>Trouvez-nous</h4>
-                        <span>Avenue hialiej</span>
+                        <span>Z3, 1065, Zone Villa (Situé entre Hammam Sofia et Café Sima) </span>
                       </div>
                     </Col>
                   </Row>
