@@ -675,6 +675,13 @@ footer {
 .google-bg {
   background: #dd4b39;
 }
+
+@media only screen and (min-width: 1000px) {
+  .footer-widget {
+    max-height: 230px;
+  }
+}
+
 .footer-widget-heading h3 {
   color: #fff;
   font-size: 20px;
