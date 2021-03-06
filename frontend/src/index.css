@@ -24,7 +24,9 @@ body {
   color: #000;
 }
 
-
+.productscreen-img {
+  max-height: 500px;
+}
 
 .product-description { 
   line-height: 2rem;
