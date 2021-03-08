@@ -8,11 +8,9 @@ import Message from './Message'
 const HeroCarousel = () => {
   return (
     <Carousel fade={true} pause='hover'className='bg-light carouselP'>
-        <Link to='products/Chiens'>
-        <Carousel.Item >
+        <Carousel.Item>
             <Image src={process.env.PUBLIC_URL + '/images/sliderpets.jpg'} className="heroImg img-fluid" fluid />
         </Carousel.Item>
-        </Link>
         
         <Carousel.Item >
             <Image src={process.env.PUBLIC_URL + '/images/sliderpets2.png'} className="heroImg img-fluid"fluid />
