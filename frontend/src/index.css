@@ -468,6 +468,44 @@ section {
   padding: 0rem 0.8rem !important;
 }
 
+
+.productInfoTab {
+  background-color:#050d16;
+  padding-top: 3rem;
+}
+.productInfoTab .atcBtn {
+  margin-bottom: 2rem;
+}
+
+.productInfoTab-header .pit-category {
+  color: #F5931F;
+  font-weight: bold;
+}
+
+.pit-price {
+  font-size: 1.3rem;
+}
+
+.pit-price-total {
+  padding: 0.5rem;
+  border-radius: 5%;
+  font-weight: bold;
+  color: #F5921F;
+  font-size: 1.5rem;
+}
+
+.pit-description {
+  height: 170px;
+  overflow: hidden;
+  color:rgb(204, 204, 204);
+  text-align: left !important;
+}
+
+
+.productInfoTab h6, h2, p {
+  color: #fff;
+}
+
 #adminmenu {
   color: #fff;
   display: block;
@@ -534,6 +572,9 @@ h2 {
 .carousel img {
   max-height: 80vh;
   width: 100%;
+}
+.carousel {
+  text-align: center !important;
 }
 .carousel a {
   margin: 0 auto;
