@@ -54,7 +54,7 @@ const HomeScreen = ({ match }) => {
             </Container>
           ) : (
             <>
-            <Container fluid>
+            <Container>
               <ProductCarousel />
             </Container>
             </>
