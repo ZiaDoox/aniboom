@@ -60,8 +60,8 @@ const CategoryScreen = ({ history, match }) => {
               setSortedField(e.target.value)
             }}>
               <option value=' '></option>
-              <option value='price-d'>Prix - Desc</option>
-              <option value='price-a'>Prix - Asc</option>
+              <option value='price-d'>Prix - Croissant</option>
+              <option value='price-a'>Prix - Décroissant</option>
               <option value='inStock'>Disponibilite</option>
           </Form.Control>
         </Form>
