@@ -24,9 +24,16 @@ const HomeScreen = ({ match }) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
+  // The reason I used pages instead of pageNumber is because im trying to get the last 
+  //4 products added by admin so Im listing products in the number of pages that exist 
+  //which is 2 in the case of 12 products
+  const lastPage = pages ? pages : 2
+
+  console.log(lastPage)
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
+  console.log(products);
 
   return (
     <>
@@ -42,10 +49,14 @@ const HomeScreen = ({ match }) => {
               <Loader />
             </Container>
           ) : error ? (
-            <Message variant="danger">{error}</Message>
+            <Container>
+              <Message variant="danger">{error}</Message>
+            </Container>
           ) : (
             <>
+            <Container fluid>
               <ProductCarousel />
+            </Container>
             </>
           )}
           <Container>
@@ -58,7 +69,7 @@ const HomeScreen = ({ match }) => {
               <>
                 <Row>
                   {products
-                    .slice(products.length - 4, products.length)
+                    .slice(1, 5)
                     .map((product) => (
                       <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                         <Product product={product} />
