@@ -35,6 +35,20 @@ const HomeScreen = ({ match }) => {
         <>
           <HeroCarousel />
           <Container>
+            <h1 className="mt-3">produits les plus vendus</h1>
+          </Container>
+          {loading ? (
+            <Container>
+              <Loader />
+            </Container>
+          ) : error ? (
+            <Message variant="danger">{error}</Message>
+          ) : (
+            <>
+              <ProductCarousel />
+            </>
+          )}
+          <Container>
             <h1 className="section_title title mt-3">Nouvelles Arrivées</h1>
             {loading ? (
               <Loader />
@@ -51,44 +65,42 @@ const HomeScreen = ({ match }) => {
                       </Col>
                     ))}
                 </Row>
-                <h1 className='mt-3'>produits les plus vendus</h1>
-                <ProductCarousel />
               </>
             )}
-            
-              <h1 className='section_title title mt-3'>Decouvrez nos univers</h1>
-              <Container>
-            <Row className="mt-5">
-              <Col sm={6} md={6} lg={3}>
-                <CategoryShowcase
-                  categoryTitle="Chiens"
-                  categoryDescription="Aliments, Accessoires &amp; Jouets"
-                  imgURL={process.env.PUBLIC_URL + "/images/dog2.png"}
-                ></CategoryShowcase>
-              </Col>
-              <Col sm={6} md={6} lg={3}>
-                <CategoryShowcase
-                  categoryTitle="Chats"
-                  categoryDescription="Promotions jusqu'a x% sur les Aliments"
-                  imgURL={process.env.PUBLIC_URL + "/images/cat2.png"}
-                ></CategoryShowcase>
-              </Col>
-              <Col sm={6} md={6} lg={3}>
-                <CategoryShowcase
-                  categoryTitle="Oiseaux"
-                  categoryDescription="Offres speciales sur Aliments &amp; Accesoires"
-                  imgURL={process.env.PUBLIC_URL + "/images/bird2.png"}
-                ></CategoryShowcase>
-              </Col>
-              <Col sm={6} md={6} lg={3}>
-                <CategoryShowcase
-                  categoryTitle="Aquarium"
-                  categoryDescription="Offres &amp; Promos sur les produits Aqua"
-                  imgURL={process.env.PUBLIC_URL + "/images/fish2.png"}
-                ></CategoryShowcase>
-              </Col>
-            </Row>
-          </Container>
+
+            <h1 className="section_title title mt-3">Decouvrez nos univers</h1>
+            <Container>
+              <Row className="mt-5">
+                <Col sm={6} md={6} lg={3}>
+                  <CategoryShowcase
+                    categoryTitle="Chiens"
+                    categoryDescription="Aliments, Accessoires &amp; Jouets"
+                    imgURL={process.env.PUBLIC_URL + "/images/dog2.png"}
+                  ></CategoryShowcase>
+                </Col>
+                <Col sm={6} md={6} lg={3}>
+                  <CategoryShowcase
+                    categoryTitle="Chats"
+                    categoryDescription="Promotions jusqu'a x% sur les Aliments"
+                    imgURL={process.env.PUBLIC_URL + "/images/cat2.png"}
+                  ></CategoryShowcase>
+                </Col>
+                <Col sm={6} md={6} lg={3}>
+                  <CategoryShowcase
+                    categoryTitle="Oiseaux"
+                    categoryDescription="Offres speciales sur Aliments &amp; Accesoires"
+                    imgURL={process.env.PUBLIC_URL + "/images/bird2.png"}
+                  ></CategoryShowcase>
+                </Col>
+                <Col sm={6} md={6} lg={3}>
+                  <CategoryShowcase
+                    categoryTitle="Aquarium"
+                    categoryDescription="Offres &amp; Promos sur les produits Aqua"
+                    imgURL={process.env.PUBLIC_URL + "/images/fish2.png"}
+                  ></CategoryShowcase>
+                </Col>
+              </Row>
+            </Container>
             <h1 className="title">Ou nous trouver?</h1>
             <div className="map mb-5 mt-5">
               <MapContainer></MapContainer>
