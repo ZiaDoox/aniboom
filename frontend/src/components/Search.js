@@ -30,6 +30,7 @@ const Search = ({ history, match }) => {
         ) : error ? (
             <Message variant='danger'>{error}</Message>
         ) : products.length ? (
+          <>
             <Container className="mt-5 mb-5 p-0">
             <Row className="d-flex justify-content-center">
               {products.map((product) => (
@@ -68,10 +69,16 @@ const Search = ({ history, match }) => {
                 </Row>
               </Col>
               ))}
-              
             </Row>
           </Container>
-        
+          <Paginate
+          pages={pages}
+          page={page}
+          keyword={keyword}
+          
+    />
+    </>
+            
         ) : (
           <>
             <Container className='mt-5'>

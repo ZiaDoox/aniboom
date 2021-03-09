@@ -20,7 +20,7 @@ const CategoryScreen = ({ history, match }) => {
 }, [dispatch, keyword, pageNumber])
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products} = productList
+  const { loading, error, products, page, pages} = productList
   const category = match.params.category
   const filteredProducts = products ? 
     products.filter(function(product) {
@@ -113,6 +113,13 @@ const CategoryScreen = ({ history, match }) => {
               
             </Row>
           </Container>
+            <Paginate
+            category={category}
+            pages={pages}
+            page={page}
+            keyword={keyword ? keyword : ''}
+      />
+            
         </>
       ) : (
         <>
@@ -122,6 +129,7 @@ const CategoryScreen = ({ history, match }) => {
         </>
       )}
       </Container>
+      
     </>
   )
 }

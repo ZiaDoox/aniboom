@@ -56,6 +56,12 @@ form.title {
   margin: 0;
 }
 
+/* Pagination */
+
+ul.pagination {
+  margin: auto;
+}
+
 /* Product Card Styles */
 
 @media (min-width: 900px) {
