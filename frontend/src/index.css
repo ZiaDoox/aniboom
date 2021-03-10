@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 
 main {
@@ -31,6 +32,7 @@ body {
 .product-description { 
   line-height: 2rem;
   word-spacing: 2px;
+  color:rgb(6, 13, 59) !important;
   font-family: 'Montserrat', sans-serif;
 }
 .product-description .list-group-item {
@@ -168,8 +170,8 @@ ul.pagination {
   min-height: 34px !important;
 }
 .product-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
+  font-family: 'Montserrat', cursive, sans-serif;
+  font-weight: 600;
   font-size: .8rem;
   height: 32px;
 }
@@ -292,11 +294,6 @@ ul.pagination {
   text-align: center;
 }
 
-.product-title {
-  font-family:Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  
-}
 .btn-details {
   font-size: 1rem;
   background-color: #f5921f;
@@ -365,6 +362,11 @@ ul.pagination {
 
 .categorysc-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media only screen and (min-width: 1000px) {
+  .categorysc-card img {
+    max-height: 210px;
+  }
 }
 .showcase .card:hover {
   text-decoration: none;
@@ -512,7 +514,7 @@ section {
 }
 
 
-.productInfoTab h6, h2, p {
+.productInfoTab h6,.productInfoTab h2, .productInfoTab p {
   color: #fff;
 }
 
