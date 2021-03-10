@@ -35,12 +35,12 @@ const getProducts = asyncHandler(async (req, res) => {
   console.log(sortMethod);
   if(sortMethod === 'priceAsc') {
     products = await Product.find({ ...keyword })
-    .sort({price:-1})
+    .sort({price:1})
     .limit(pageSize)
     .skip(pageSize * (page -1))
   }else if(sortMethod === 'priceDesc') {
     products = await Product.find({ ...keyword })
-    .sort({price: 1})
+    .sort({price: -1})
     .limit(pageSize)
     .skip(pageSize * (page - 1))
   }else if(sortMethod === 'inStock'){
@@ -56,43 +56,6 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
-// Fetch all products without pagination
-
-const getAllProducts = asyncHandler(async (req, res) => {
-
-  let keyword = req.query.keyword
-    ? {
-      name: {
-        $regex: req.query.keyword,
-        $options: "i",
-      },
-    }
-    : {};
-  let products = await Product.find({...keyword})
-
-  if(products.length === 0) {
-    keyword = req.query.keyword
-      ? {
-        category: {
-          $regex: req.query.keyword,
-          $options: 'i',
-        },
-      } : {};
-      products = await Product.find({...keyword})
-    }
-
-    let sortingMethod = req.query.sort
-    if(sortingMethod === 'price-d') {
-      products.sort((a, b) => a.price - b.price)
-    }else if(sortingMethod === 'price-a') {
-      products.sort((a, b) => b.price - a.price)
-    }else {
-      products = products.filter(function(product) {
-        return product.countInStock > 0;
-      })
-    }
-  res.json({products})
-})
 
 // @desc Fetch single category
 // @route GET /api/products/:category
