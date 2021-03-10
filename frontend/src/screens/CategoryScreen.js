@@ -66,7 +66,7 @@ const CategoryScreen = ({ history, match }) => {
           <Container className="mt-5 mb-5 p-0">
             <Row className="d-flex justify-content-center">
               {sortedProducts.map((product) => (
-                <Col md={10} key={product._id}>
+              <Col md={10} key={product._id}>
                 <Row className="p-2 border rounded categorysc-card">
                   <Col className="mt-1" md={3}>
                     <img className="img-fluid ig-responsive rounded product-img" src={product.image}/>
@@ -95,7 +95,6 @@ const CategoryScreen = ({ history, match }) => {
                         className="btn btn-outline-primary btn-atc btn-sm mt-2" 
                         type="button"
                         >Ajouter au panier</button>
-                      <p className="mt-4">{product.countInStock > 0 ? 'In Stock ' : 'Out Of Stock'}</p>
                     </div>
                   </Col>
                 </Row>
