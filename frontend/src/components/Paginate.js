@@ -2,7 +2,7 @@ import React from 'react'
 import { Pagination } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
-const Paginate = ({ pages, category, page, isAdmin = false, keyword = '' }) => {
+const Paginate = ({ pages, category, page, sortMethod, isAdmin = false, keyword = '' }) => {
   return (
     pages > 1 && (
       <Pagination className='m-2 justify-content-center'>
@@ -13,7 +13,7 @@ const Paginate = ({ pages, category, page, isAdmin = false, keyword = '' }) => {
               !isAdmin
                 ? keyword 
                   ? `/search/${keyword}/page/${x + 1}`
-                  : `/products/${category}/page/${x + 1}`
+                  : `/products/${category}/page/${x + 1}/${sortMethod}`
                 : `/admin/productlist/${x + 1}`
             }
           >

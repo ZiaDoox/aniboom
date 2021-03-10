@@ -14,10 +14,14 @@ const CategoryScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1
   const keyword = match.params.keyword
 
+  let sortMethod = match.params.sortMethod || ''
+
+  
+
   const dispatch = useDispatch()  
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-}, [dispatch, keyword, pageNumber])
+    dispatch(listProducts(keyword, pageNumber, sortMethod))
+}, [dispatch, keyword, pageNumber, sortMethod])
 
   const productList = useSelector((state) => state.productList)
   const { loading, error, products, page, pages} = productList
@@ -26,25 +30,11 @@ const CategoryScreen = ({ history, match }) => {
     products.filter(function(product) {
       return product.category === category;
     }) : {}
-  
-  const [sortedField, setSortedField] = React.useState(null);
-  let sortedProducts = [...filteredProducts];
-  
-  if(sortedField !== null) {
-    if(sortedField === 'price-d') {
-      sortedProducts.sort((a,b) => {
-        return a.price - b.price;
-      });
-    }else if(sortedField === 'inStock') {
-      sortedProducts = sortedProducts.filter(function(product) {
-        return product.countInStock > 0;
-      })
-    } else if (sortedField === 'price-a') {
-      sortedProducts.sort((a, b) => {
-        return b.price - a.price;
-      });
-    }
+  let sortedProducts = []
+  if(filteredProducts.length) {
+    sortedProducts = [...filteredProducts];
   }
+  
 
   return (
     <>
@@ -57,11 +47,12 @@ const CategoryScreen = ({ history, match }) => {
           <Form.Control
             as='select'
             onChange={(e) => {
-              setSortedField(e.target.value)
+              sortMethod = e.target.value
+              history.push(`/products/${category}/${sortMethod}`)
             }}>
-              <option value=' '></option>
-              <option value='price-d'>Prix - Croissant</option>
-              <option value='price-a'>Prix - Décroissant</option>
+              <option value=''></option>
+              <option value='priceDesc'>Prix - Croissant</option>
+              <option value='priceAsc'>Prix - Décroissant</option>
               <option value='inStock'>Disponibilite</option>
           </Form.Control>
         </Form>
@@ -116,6 +107,7 @@ const CategoryScreen = ({ history, match }) => {
             <Paginate
             category={category}
             pages={pages}
+            sortMethod={sortMethod}
             page={page}
             keyword={keyword ? keyword : ''}
       />
