@@ -32,6 +32,7 @@ body {
 .product-description { 
   line-height: 2rem;
   word-spacing: 2px;
+  color:rgb(6, 13, 59) !important;
   font-family: 'Montserrat', sans-serif;
 }
 .product-description .list-group-item {
@@ -513,7 +514,7 @@ section {
 }
 
 
-.productInfoTab h6, h2, p {
+.productInfoTab h6,.productInfoTab h2, .productInfoTab p {
   color: #fff;
 }
 
