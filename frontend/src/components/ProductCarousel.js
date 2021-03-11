@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Carousel, Image, Row, Col, Button, Form } from 'react-bootstrap'
+import { Carousel, Image, Row, Col, Button, Form, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from './Loader'
 import Message from './Message'
 import { listTopProducts } from '../actions/productActions'
 import { useHistory } from 'react-router-dom'
+import Rating from './Rating'
 
 const ProductCarousel = () => {
   const dispatch = useDispatch()
@@ -30,7 +31,7 @@ const ProductCarousel = () => {
            <Row className='w-100'>
             <Col md={6} lg={6}>
               <Image src={product.image} fluid/>
-            </Col>
+            </Col>  
             <Col  md={6} lg={6}>
               <div className='productInfoTab h-100 w-100'>
                 <Row className='mt-3'>
@@ -49,6 +50,11 @@ const ProductCarousel = () => {
                   </Col>
                 </Row>
                 </Link>
+                <Row className='justify-content-center'>
+                  <Rating 
+                    value={product.rating}
+                    />
+                </Row>
                 <Row>
                   <Col className='text-center'>
                     <h6 className='pit-price-header'>Prix:</h6>
