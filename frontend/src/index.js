@@ -6,11 +6,29 @@ import './bootstrap.min.css'
 import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core'
+import { blue } from '@material-ui/core/colors'
+
+
+const theme = createMuiTheme({
+
+  palette: {
+    primary: {
+      main: "#f5921f"
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+    secondary: blue,
+  } 
+})
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ThemeProvider>,
   document.getElementById('root')
 )
 
