@@ -8,7 +8,7 @@ import Product from '../models/productModel.js'
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
-  const sortMethod = req.query.sortMethod || ''
+  const sortMethod = req.query.sortMethod 
 
   let keyword = req.query.keyword
     ? { 
@@ -34,27 +34,23 @@ const getProducts = asyncHandler(async (req, res) => {
       .limit(pageSize)
       .skip(pageSize * (page - 1))
   }
-  console.log(sortMethod);
-  if(sortMethod === 'priceAsc') {
-    products = await Product.find({ ...keyword })
-    .sort({price:1})
-    .limit(pageSize)
-    .skip(pageSize * (page -1))
-  }else if(sortMethod === 'priceDesc') {
-    products = await Product.find({ ...keyword })
-    .sort({price: -1})
-    .limit(pageSize)
-    .skip(pageSize * (page - 1))
-  }else if(sortMethod === 'inStock'){
-    products = await Product.find({ ...keyword, countInStock: {$gte: 1}})
-      .limit(pageSize)
-      .skip(pageSize * (page - 1))
-  } else {
-    products = await Product.find({ ...keyword })
-    .limit(pageSize)
-    .skip(pageSize * (page - 1))
+  if (sortMethod !== '') {
+    if (sortMethod === "priceAsc") {
+      products = await Product.find({ ...keyword })
+        .sort({ price: 1 })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+    } else if (sortMethod === "priceDesc") {
+      products = await Product.find({ ...keyword })
+        .sort({ price: -1 })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+    } else if (sortMethod === "inStock") {
+      products = await Product.find({ ...keyword, countInStock: { $gte: 1 } })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+    }
   }
-  
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 

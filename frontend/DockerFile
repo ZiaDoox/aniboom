@@ -1,0 +1,20 @@
+# Docker File for React Client
+
+# Build react client
+
+FROM node:14.16.0
+
+#WORKING DIR TO APP
+WORKDIR C:/Users/ziadp/OneDrive/Documents/_WORK/aniboom/frontend/src
+
+COPY package*.json ./
+
+#installing dependancies
+RUN npm install --silent
+
+#copy local files to app folder
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
