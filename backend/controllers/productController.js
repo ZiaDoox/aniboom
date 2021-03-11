@@ -21,7 +21,7 @@ const getProducts = asyncHandler(async (req, res) => {
   let products = await Product.find({ ...keyword })
   .limit(pageSize)
   .skip(pageSize * (page - 1))
-  const count = await Product.countDocuments({ ...keyword })
+  let count = await Product.countDocuments({ ...keyword })
   if(products.length === 0) {
     keyword = req.query.keyword
       ? {
@@ -49,6 +49,7 @@ const getProducts = asyncHandler(async (req, res) => {
       products = await Product.find({ ...keyword, countInStock: { $gte: 1 } })
         .limit(pageSize)
         .skip(pageSize * (page - 1));
+      count = await Product.countDocuments({...keyword, countInStock: {$gte: 1}})
     }
   }
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
