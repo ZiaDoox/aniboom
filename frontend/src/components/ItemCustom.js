@@ -12,6 +12,7 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Divider from "@material-ui/core/Divider";
 import CardContent from "@material-ui/core/CardContent";
+import { useHistory } from 'react-router-dom';
 import Typography from "@material-ui/core/Typography";
 import { grey } from "@material-ui/core/colors";
 import { ImageOutlined } from "@material-ui/icons";
@@ -49,6 +50,11 @@ const styles = (theme) => ({
 });
 
 const ItemCustom = ({ item, classes }) => {
+  const history = useHistory();
+  const addToCartHandler = () => {
+    history.push(`/cart/${item._id}?qty=${1}`)
+  }
+
   return (
     <>
       <Grid container className={classes.root}>
@@ -82,6 +88,14 @@ const ItemCustom = ({ item, classes }) => {
                 <Rating value={item.numReviews} />
               </div>
                 <SimpleTabs product={item}></SimpleTabs>
+                
+          <Button
+            className="rounded mt-3 mx-auto bg-light font-medium font-size-lg"
+            onClick={addToCartHandler}
+            variant="primary"
+          >
+            Ajouter au panier
+          </Button>
           </Grid>
         </Grid>
       </Grid>
