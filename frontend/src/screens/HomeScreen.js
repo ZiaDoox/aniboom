@@ -24,12 +24,7 @@ const HomeScreen = ({ match }) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
-  // The reason I used pages instead of pageNumber is because im trying to get the last 
-  //4 products added by admin so Im listing products in the number of pages that exist 
-  //which is 2 in the case of 12 products
-  const lastPage = pages ? pages : 2
-
-  console.log(lastPage)
+ 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);

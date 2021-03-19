@@ -60,7 +60,7 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route GET /api/products/:category
 // @access Public
 const getProductByCategory = asyncHandler(async (req, res) => {
-  const pageSize = 1000
+  const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
 
   const category = req.query.category
