@@ -2,6 +2,7 @@
 
 > eCommerce platform built with the MERN stack & Redux.
 
+Here is a link: aniboom-heroku.heroku.com
 
 ## Features
 
@@ -15,7 +16,6 @@
 - Admin Order details page
 - Mark orders as delivered option
 - Checkout process (shipping, payment method, etc)
-- Database seeder (products & users)
 
 
 ### Env Variables

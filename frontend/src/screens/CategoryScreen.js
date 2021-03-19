@@ -52,8 +52,8 @@ const CategoryScreen = ({ history, match }) => {
               history.push(`/products/${category}/${sortMethod}`)
             }}>
               <option value=''></option>
-              <option value='priceDesc'>Prix - Croissant</option>
-              <option value='priceAsc'>Prix - Décroissant</option>
+              <option value='priceAsc'>Prix - Croissant</option>
+              <option value='priceDesc'>Prix - Décroissant</option>
               <option value='inStock'>Disponibilite</option>
           </Form.Control>
         </Form>

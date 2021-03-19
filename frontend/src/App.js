@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
 import ServiceScreen from './screens/ServiceScreen'
 import ThankYouPage from './components/ThankYouPage'
 import Header from './components/Header'
@@ -41,9 +40,8 @@ const App = () => {
           <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
-          <Route path='/products/:category' component={CategoryScreen} exact/>
-          <Route path='/products/:category/page/:pageNumber/:sortMethod' component={CategoryScreen} exact />
-          <Route path='/products/:category/:sortMethod' component={CategoryScreen} exact />
+          <Route path='/products/:category/:sortMethod?' component={CategoryScreen} exact/>
+          <Route path='/products/:category/page/:pageNumber/:sortMethod?' component={CategoryScreen} exact />
 
           <Route
             path='/admin/productlist'
@@ -57,9 +55,9 @@ const App = () => {
           />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
           <Route path='/admin/orderlist' component={OrderListScreen} />
-          <Route path='/search/:keyword' component={Search} exact />
+          <Route path='/search/:keyword/:sortMethod?' component={Search} exact />
           <Route
-            path='/search/:keyword/page/:pageNumber'
+            path='/search/:keyword/page/:pageNumber/:sortMethod?'
             component={Search}
             exact
           />

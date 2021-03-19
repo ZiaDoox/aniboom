@@ -8,7 +8,7 @@ import Product from '../models/productModel.js'
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
-  const sortMethod = req.query.sortMethod || ''
+  const sortMethod = req.query.sortMethod 
 
   let keyword = req.query.keyword
     ? { 
@@ -18,8 +18,10 @@ const getProducts = asyncHandler(async (req, res) => {
         },
       }
     : {};
-  let products = []
-  const count = await Product.countDocuments({ ...keyword })
+  let products = await Product.find({ ...keyword })
+  .limit(pageSize)
+  .skip(pageSize * (page - 1))
+  let count = await Product.countDocuments({ ...keyword })
   if(products.length === 0) {
     keyword = req.query.keyword
       ? {
@@ -32,73 +34,33 @@ const getProducts = asyncHandler(async (req, res) => {
       .limit(pageSize)
       .skip(pageSize * (page - 1))
   }
-  console.log(sortMethod);
-  if(sortMethod === 'priceAsc') {
-    products = await Product.find({ ...keyword })
-    .sort({price:-1})
-    .limit(pageSize)
-    .skip(pageSize * (page -1))
-  }else if(sortMethod === 'priceDesc') {
-    products = await Product.find({ ...keyword })
-    .sort({price: 1})
-    .limit(pageSize)
-    .skip(pageSize * (page - 1))
-  }else if(sortMethod === 'inStock'){
-    products = await Product.find({ ...keyword, countInStock: {$gte: 1}})
-      .limit(pageSize)
-      .skip(pageSize * (page - 1))
-  }else {
-    products = await Product.find({ ...keyword })
-    .limit(pageSize)
-    .skip(pageSize * (page - 1))
+  if (sortMethod !== '') {
+    if (sortMethod === "priceAsc") {
+      products = await Product.find({ ...keyword })
+        .sort({ price: 1 })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+    } else if (sortMethod === "priceDesc") {
+      products = await Product.find({ ...keyword })
+        .sort({ price: -1 })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+    } else if (sortMethod === "inStock") {
+      products = await Product.find({ ...keyword, countInStock: { $gte: 1 } })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+      count = await Product.countDocuments({...keyword, countInStock: {$gte: 1}})
+    }
   }
-  
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
-// Fetch all products without pagination
-
-const getAllProducts = asyncHandler(async (req, res) => {
-
-  let keyword = req.query.keyword
-    ? {
-      name: {
-        $regex: req.query.keyword,
-        $options: "i",
-      },
-    }
-    : {};
-  let products = await Product.find({...keyword})
-
-  if(products.length === 0) {
-    keyword = req.query.keyword
-      ? {
-        category: {
-          $regex: req.query.keyword,
-          $options: 'i',
-        },
-      } : {};
-      products = await Product.find({...keyword})
-    }
-
-    let sortingMethod = req.query.sort
-    if(sortingMethod === 'price-d') {
-      products.sort((a, b) => a.price - b.price)
-    }else if(sortingMethod === 'price-a') {
-      products.sort((a, b) => b.price - a.price)
-    }else {
-      products = products.filter(function(product) {
-        return product.countInStock > 0;
-      })
-    }
-  res.json({products})
-})
 
 // @desc Fetch single category
 // @route GET /api/products/:category
 // @access Public
 const getProductByCategory = asyncHandler(async (req, res) => {
-  const pageSize = 1000
+  const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
 
   const category = req.query.category
