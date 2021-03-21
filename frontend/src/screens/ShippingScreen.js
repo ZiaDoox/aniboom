@@ -24,13 +24,6 @@ const ShippingScreen = ({ history }) => {
     history.push('/payment')
   }
 
-  const isNumberKey = (e) => {
-    let charCode = (e.which) ? e.which : e.keyCode
-    if(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-
-    return true;
-  }
-
   return (
     <FormContainer className="shipping-form">
       <CheckoutSteps step1 step2 />

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Row, Col, Card, Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -11,7 +11,6 @@ import Meta from "../components/Meta";
 import { listProducts } from "../actions/productActions";
 import HeroCarousel from "../components/HeroCarousel";
 import MapContainer from "../components/MapContainer";
-import { LinkContainer } from "react-router-bootstrap";
 import CategoryShowcase from "../components/CategoryShowcase";
 
 const HomeScreen = ({ match }) => {
@@ -28,7 +27,6 @@ const HomeScreen = ({ match }) => {
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
-  console.log(products);
 
   return (
     <>

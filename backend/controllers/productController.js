@@ -8,7 +8,7 @@ import Product from '../models/productModel.js'
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
-  const sortMethod = req.query.sortMethod 
+  const sortMethod = req.query.sortMethod || ''
 
   let keyword = req.query.keyword
     ? { 
@@ -22,18 +22,7 @@ const getProducts = asyncHandler(async (req, res) => {
   .limit(pageSize)
   .skip(pageSize * (page - 1))
   let count = await Product.countDocuments({ ...keyword })
-  if(products.length === 0) {
-    keyword = req.query.keyword
-      ? {
-        category: {
-          $regex: req.query.keyword,
-          $options: "i",
-        },
-      } : {}
-    products = await Product.find({ ...keyword})
-      .limit(pageSize)
-      .skip(pageSize * (page - 1))
-  }
+
   if (sortMethod !== '') {
     if (sortMethod === "priceAsc") {
       products = await Product.find({ ...keyword })
