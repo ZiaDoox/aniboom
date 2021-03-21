@@ -60,15 +60,37 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route GET /api/products/:category
 // @access Public
 const getProductByCategory = asyncHandler(async (req, res) => {
+  console.log("here")
   const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
+  const sortMethod = req.query.sortMethod 
 
-  const category = req.query.category
+
+  const category = req.params.category
 
   const count = await Product.countDocuments({category: category})
-  const products = await Product.find({}).sort({category: category})
+  let products = await Product.find({category: category})
     .limit(pageSize)
     .skip(pageSize * (page - 1))
+    if (sortMethod !== '') {
+      if (sortMethod === "priceAsc") {
+        products = await Product.find({})
+          .sort({ price: 1 })
+          .limit(pageSize)
+          .skip(pageSize * (page - 1));
+      } else if (sortMethod === "priceDesc") {
+        products = await Product.find({})
+          .sort({ price: -1 })
+          .limit(pageSize)
+          .skip(pageSize * (page - 1));
+      } else if (sortMethod === "inStock") {
+        products = await Product.find({countInStock: { $gte: 1 } })
+          .limit(pageSize)
+          .skip(pageSize * (page - 1));
+        count = await Product.countDocuments({countInStock: {$gte: 1}})
+      }
+    }
+    
 
   res.json({products, page, pages: Math.ceil(count / pageSize)})
 })

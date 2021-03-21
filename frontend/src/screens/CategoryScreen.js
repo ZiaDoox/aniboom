@@ -8,12 +8,13 @@ import ProductCardLong from '../components/ProductCardLong'
 import Paginate from '../components/Paginate'
 import ProductCarousel from '../components/ProductCarousel'
 
-import { listProducts } from '../actions/productActions'
+import { listProducts, listProductsByCategory } from '../actions/productActions'
 
 const CategoryScreen = ({ history, match }) => {
 
   const pageNumber = match.params.pageNumber || 1
   const keyword = match.params.keyword
+  const category = match.params.category
 
   let sortMethod = match.params.sortMethod || ''
 
@@ -21,20 +22,19 @@ const CategoryScreen = ({ history, match }) => {
 
   const dispatch = useDispatch()  
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber, sortMethod))
-}, [dispatch, keyword, pageNumber, sortMethod])
-
+    // dispatch(listProducts(keyword, pageNumber, sortMethod))
+    dispatch(listProductsByCategory(pageNumber, category, sortMethod))
+}, [dispatch, category, pageNumber, sortMethod])
+  
   const productList = useSelector((state) => state.productList)
   const { loading, error, products, page, pages} = productList
-  const category = match.params.category
-  const filteredProducts = products ? 
-    products.filter(function(product) {
-      return product.category === category;
-    }) : {}
+
   let sortedProducts = []
-  if(filteredProducts.length) {
-    sortedProducts = [...filteredProducts];
-  }
+
+
+  sortedProducts = products ?
+    [...products]
+    : [];
   
 
   return (

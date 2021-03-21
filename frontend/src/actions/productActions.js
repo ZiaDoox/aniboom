@@ -21,6 +21,9 @@ import {
   PRODUCT_TOP_REQUEST,
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
+  PRODUCT_LIST_CATEGORY_REQUEST,
+  PRODUCT_LIST_CATEGORY_SUCESS,
+  PRODUCT_LIST_CATEGORY_FAIL
 } from '../constants/productConstants'
 import { logout } from './userActions'
 
@@ -240,6 +243,28 @@ export const listTopProducts = () => async (dispatch) => {
     dispatch({
       type: PRODUCT_TOP_FAIL,
       payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
+
+export const listProductsByCategory = ( pageNumber = '', category = '', sortMethod = '') => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_LIST_CATEGORY_REQUEST })
+    const { data } = await axios.get(
+      `/api/products/${category}?pageNumber=${pageNumber}&sortMethod=${sortMethod}`
+    )
+
+    dispatch({
+      type: PRODUCT_LIST_CATEGORY_SUCESS,
+      payload: data
+    })
+  } catch(error) {
+    dispatch({
+      type: PRODUCT_LIST_CATEGORY_FAIL,
+      payload: 
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
