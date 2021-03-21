@@ -60,15 +60,14 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route GET /api/products/:category
 // @access Public
 const getProductByCategory = asyncHandler(async (req, res) => {
-  console.log("here")
   const pageSize = 6
   const page = Number(req.query.pageNumber) || 1
-  const sortMethod = req.query.sortMethod 
+  let sortMethod = req.query.sortMethod 
 
 
   const category = req.params.category
 
-  const count = await Product.countDocuments({category: category})
+  let count = await Product.countDocuments({category: category})
   let products = await Product.find({category: category})
     .limit(pageSize)
     .skip(pageSize * (page - 1))
