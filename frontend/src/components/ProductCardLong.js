@@ -8,7 +8,7 @@ import { Row, Col, Container, Button, Form} from 'react-bootstrap'
 const ProductCardLong = (props, history) =>  {
     return (
         <Container className="mt-5 mb-5 p-0">
-            <Row className="d-flex justify-content-center">
+            <Row className="d-flex justify-content-center ">
               {props.products.map((product) => (
               <Col md={10} key={product._id}>
                 <Row className="p-2 border rounded categorysc-card">
