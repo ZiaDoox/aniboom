@@ -35,7 +35,7 @@ const HomeScreen = ({ match }) => {
         <>
           <HeroCarousel />
           <Container>
-            <h1 className="mt-3">produits les plus vendus</h1>
+            <h1 className="mt-3">Les waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa produits les plus vendus</h1>
           </Container>
           {loading ? (
             <Container>
